@@ -4,16 +4,16 @@ import 'package:flutter/widgets.dart';
 class CommonButton extends StatelessWidget {
   CommonButton({
     super.key,
-    this.actionOnPress,
+    required this.actionOnPress,
     required this.child,
-    required this.buttonHeight,
-    required this.buttonWidth,
+    this.buttonHeight = 48,
+    this.buttonWidth = 338,
     this.buttonIcon,
     this.backgroundColor,
     this.foregroundColor,
     this.sideColor,
   });
-  final void Function()? actionOnPress;
+  final void Function() actionOnPress;
   final Widget child;
   final double buttonWidth;
   final double buttonHeight;

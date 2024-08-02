@@ -99,8 +99,7 @@ class _SignInPageState extends State<SignInPage> {
                   height: 40,
                 ),
                 CommonButton(
-                  buttonHeight: 48,
-                  buttonWidth: 338,
+                  actionOnPress: () {},
                   buttonIcon: Icon(
                     Icons.apple,
                     color: theme.colorScheme.onSecondary,
@@ -116,8 +115,7 @@ class _SignInPageState extends State<SignInPage> {
                   height: 15,
                 ),
                 CommonButton(
-                  buttonHeight: 48,
-                  buttonWidth: 338,
+                  actionOnPress: () {},
                   buttonIcon: Icon(
                     Icons.g_mobiledata,
                     color: theme.colorScheme.onSecondary,
@@ -133,8 +131,7 @@ class _SignInPageState extends State<SignInPage> {
                   height: 15,
                 ),
                 CommonButton(
-                  buttonHeight: 48,
-                  buttonWidth: 338,
+                  actionOnPress: () {},
                   buttonIcon: Icon(
                     Icons.facebook,
                     color: theme.colorScheme.onSecondary,
@@ -172,8 +169,6 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 CommonButton(
                   actionOnPress: _goToSignInWithEmailPage,
-                  buttonHeight: 48,
-                  buttonWidth: 338,
                   backgroundColor: theme.colorScheme.primary,
                   child: Text(
                     "Sign in with Email",

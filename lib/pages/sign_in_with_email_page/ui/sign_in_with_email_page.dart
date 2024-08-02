@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:travel_app/app/routes/app_router.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 import 'package:travel_app/pages/sign_in_with_email_page/features/sign_in_with_email_repository.dart';
 import 'package:travel_app/pages/sign_in_with_email_page/models/sign_in_with_email_form_keys.dart';
@@ -28,6 +29,10 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
     setState(() {
       obscureTextInput = !obscureTextInput;
     });
+  }
+
+  _goToForgotPasswordPage() {
+    context.router.push(const ForgotPasswordRoute());
   }
 
   @override
@@ -80,9 +85,8 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                               height: 20,
                             ),
                             CommonButton(
+                              actionOnPress: _goToForgotPasswordPage,
                               child: Text('Forgot password?'),
-                              buttonHeight: 48,
-                              buttonWidth: 400,
                               backgroundColor:
                                   Theme.of(context).colorScheme.error,
                               foregroundColor:
@@ -93,8 +97,6 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                             ),
                             CommonButton(
                               child: Text('Sign in Now'),
-                              buttonHeight: 48,
-                              buttonWidth: 400,
                               backgroundColor:
                                   Theme.of(context).colorScheme.primary,
                               foregroundColor:
