@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    ExploreRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ExplorePage(),
+      );
+    },
     ForgotPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -40,6 +46,20 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [ExplorePage]
+class ExploreRoute extends PageRouteInfo<void> {
+  const ExploreRoute({List<PageRouteInfo>? children})
+      : super(
+          ExploreRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ExploreRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

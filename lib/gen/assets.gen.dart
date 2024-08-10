@@ -9,6 +9,74 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsExploreGen {
+  const $AssetsExploreGen();
+
+  /// File path: assets/explore/artAndHumanitiesTopics.png
+  AssetGenImage get artAndHumanitiesTopics =>
+      const AssetGenImage('assets/explore/artAndHumanitiesTopics.png');
+
+  /// File path: assets/explore/businessTopics.png
+  AssetGenImage get businessTopics =>
+      const AssetGenImage('assets/explore/businessTopics.png');
+
+  /// File path: assets/explore/computerTopics.png
+  AssetGenImage get computerTopics =>
+      const AssetGenImage('assets/explore/computerTopics.png');
+
+  /// File path: assets/explore/designTopics.png
+  AssetGenImage get designTopics =>
+      const AssetGenImage('assets/explore/designTopics.png');
+
+  /// File path: assets/explore/financeAndAccountingTopics.png
+  AssetGenImage get financeAndAccountingTopics =>
+      const AssetGenImage('assets/explore/financeAndAccountingTopics.png');
+
+  /// File path: assets/explore/informationTechnologyTopics.png
+  AssetGenImage get informationTechnologyTopics =>
+      const AssetGenImage('assets/explore/informationTechnologyTopics.png');
+
+  /// File path: assets/explore/popularCourseImage1.png
+  AssetGenImage get popularCourseImage1 =>
+      const AssetGenImage('assets/explore/popularCourseImage1.png');
+
+  /// File path: assets/explore/popularCourseImage2.png
+  AssetGenImage get popularCourseImage2 =>
+      const AssetGenImage('assets/explore/popularCourseImage2.png');
+
+  /// File path: assets/explore/popularCourseImage3.png
+  AssetGenImage get popularCourseImage3 =>
+      const AssetGenImage('assets/explore/popularCourseImage3.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        artAndHumanitiesTopics,
+        businessTopics,
+        computerTopics,
+        designTopics,
+        financeAndAccountingTopics,
+        informationTechnologyTopics,
+        popularCourseImage1,
+        popularCourseImage2,
+        popularCourseImage3
+      ];
+}
+
+class $AssetsPopularTeachersCarouselGen {
+  const $AssetsPopularTeachersCarouselGen();
+
+  /// File path: assets/popular_teachers_carousel/popular_teacher_female.png
+  AssetGenImage get popularTeacherFemale => const AssetGenImage(
+      'assets/popular_teachers_carousel/popular_teacher_female.png');
+
+  /// File path: assets/popular_teachers_carousel/popular_teacher_male.png
+  AssetGenImage get popularTeacherMale => const AssetGenImage(
+      'assets/popular_teachers_carousel/popular_teacher_male.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [popularTeacherFemale, popularTeacherMale];
+}
+
 class $AssetsSignInGen {
   const $AssetsSignInGen();
 
@@ -53,6 +121,9 @@ class $AssetsWalkthroughGen {
 class Assets {
   Assets._();
 
+  static const $AssetsExploreGen explore = $AssetsExploreGen();
+  static const $AssetsPopularTeachersCarouselGen popularTeachersCarousel =
+      $AssetsPopularTeachersCarouselGen();
   static const $AssetsSignInGen signIn = $AssetsSignInGen();
   static const $AssetsWalkthroughGen walkthrough = $AssetsWalkthroughGen();
 }

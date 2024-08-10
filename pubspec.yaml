@@ -73,6 +73,18 @@ flutter:
     - assets/walkthrough/walkthrough_person_3.png
     - assets/signIn/appIcon.png
     - assets/signIn/eyeOff.png
+    - assets/popular_teachers_carousel/popular_teacher_female.png
+    - assets/popular_teachers_carousel/popular_teacher_male.png
+    - assets/explore/artAndHumanitiesTopics.png
+    - assets/explore/businessTopics.png
+    - assets/explore/computerTopics.png
+    - assets/explore/designTopics.png
+    - assets/explore/financeAndAccountingTopics.png
+    - assets/explore/informationTechnologyTopics.png
+    - assets/explore/popularCourseImage1.png
+    - assets/explore/popularCourseImage2.png
+    - assets/explore/popularCourseImage3.png
+    
 
   # To add assets to your application, add an assets section, like this:
   # assets:
