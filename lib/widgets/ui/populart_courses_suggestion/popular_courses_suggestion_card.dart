@@ -2,7 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 
 class PopularCoursesSuggestionCard extends StatelessWidget {
-  const PopularCoursesSuggestionCard({super.key});
+  const PopularCoursesSuggestionCard({
+    super.key,
+    required this.courseAmountTime,
+    required this.courseAmountLesson,
+    required this.courseTitle,
+    required this.courseTeacherName,
+    required this.courseCost,
+    required this.courseImage,
+  });
+  final String courseAmountTime;
+  final String courseAmountLesson;
+  final String courseTitle;
+  final String courseTeacherName;
+  final String courseCost;
+  final AssetGenImage courseImage;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -14,30 +28,40 @@ class PopularCoursesSuggestionCard extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.fill,
-              image: Assets.explore.popularCourseImage1.provider(),
+              image: courseImage.provider(),
             ),
           ),
           child: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.center,
+                colors: [
+                  Color.fromARGB(178, 0, 0, 0),
+                  Color.fromARGB(0, 158, 158, 158),
+                ],
+              ),
+            ),
             alignment: Alignment.topLeft,
-            padding: EdgeInsets.only(left: 10, top: 10, right: 10),
+            padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
                     Text(
-                      '1h 12m',
+                      courseAmountTime,
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
                           color: Theme.of(context).colorScheme.secondary),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 8, right: 8),
+                      margin: const EdgeInsets.only(left: 8, right: 8),
                       width: 5,
                       height: 5,
                       color: Theme.of(context).colorScheme.secondary,
                     ),
                     Text(
-                      '5 Lessons',
+                      '$courseAmountLesson Lessons',
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
                           color: Theme.of(context).colorScheme.secondary),
                     ),
@@ -53,13 +77,29 @@ class PopularCoursesSuggestionCard extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 10, bottom: 7),
-          child: Text('How to Start an Amazon FBA store\non a Tight Budget', style: Theme.of(context).,),
+          child: Text(courseTitle,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(letterSpacing: 0.1)),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 7),
-          child: Text("Grabriella Susi"),
+          child: Text(
+            courseTeacherName,
+            style: Theme.of(context)
+                .textTheme
+                .titleSmall
+                ?.copyWith(color: Color.fromARGB(255, 158, 158, 158)),
+          ),
         ),
-        Text('IDR 219.000'),
+        Text(
+          courseCost,
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(color: Theme.of(context).colorScheme.primary),
+        ),
       ],
     );
   }
