@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/app/routes/app_router.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 import 'package:travel_app/pages/sign_in/ui/sign_in_page.dart';
-import 'package:travel_app/shared/ui/common_button.dart';
+import 'package:travel_app/shared/ui/common_button/common_button.dart';
 
-import 'package:travel_app/shared/ui/walkthrough.dart';
+import 'package:travel_app/entities/walkthrough/walkthrough.dart';
+import 'package:travel_app/widgets/ui/walkthrough_page_indicator/page_indicator.dart';
 
 @RoutePage()
 class WalkthroughPage extends StatefulWidget {
@@ -39,48 +40,6 @@ class _WalkthroughPageState extends State<WalkthroughPage>
     setState(() {
       _currentPageIndex = currentPageIndex;
     });
-  }
-
-  bool _isLastPageOfPageView(int indexOfPage) {
-    return indexOfPage >= _tabController.length;
-  }
-
-  void _updateCurrentPageIndex(int index) {
-    if (_isLastPageOfPageView(index)) {
-      _goToSignInPage(const SignInRoute());
-    } else {
-      _tabController.index = index;
-      _pageController.animateToPage(index,
-          duration: const Duration(microseconds: 500), curve: Curves.ease);
-    }
-  }
-
-  void _goToSignInPage(PageRouteInfo<dynamic> route) {
-    context.router.push(route);
-  }
-
-  Widget pageIndicator() {
-    return Container(
-        margin: EdgeInsets.only(bottom: 30),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            TabPageSelector(
-              controller: _tabController,
-              selectedColor: Colors.blue,
-            ),
-            CommonButton(
-              buttonWidth: 140,
-              buttonHeight: 48,
-              actionOnPress: () {
-                _updateCurrentPageIndex(_currentPageIndex + 1);
-              },
-              child: _isLastPageOfPageView(_currentPageIndex + 1)
-                  ? const Text("Get started")
-                  : const Text("Next"),
-            ),
-          ],
-        ));
   }
 
   @override
@@ -120,7 +79,12 @@ class _WalkthroughPageState extends State<WalkthroughPage>
                   ),
                 ],
               ),
-              pageIndicator(),
+              PageIndicator(
+                tabController: _tabController,
+                currentPageIndex: _currentPageIndex,
+                pageController: _pageController,
+                context: context,
+              )
             ],
           ),
         ),

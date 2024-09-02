@@ -9,6 +9,54 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsBottomTabBarGen {
+  const $AssetsBottomTabBarGen();
+
+  /// File path: assets/bottom_tab_bar/explore_active_icon.png
+  AssetGenImage get exploreActiveIcon =>
+      const AssetGenImage('assets/bottom_tab_bar/explore_active_icon.png');
+
+  /// File path: assets/bottom_tab_bar/explore_inactive_icon.png
+  AssetGenImage get exploreInactiveIcon =>
+      const AssetGenImage('assets/bottom_tab_bar/explore_inactive_icon.png');
+
+  /// File path: assets/bottom_tab_bar/my_course_active_icon.png
+  AssetGenImage get myCourseActiveIcon =>
+      const AssetGenImage('assets/bottom_tab_bar/my_course_active_icon.png');
+
+  /// File path: assets/bottom_tab_bar/my_course_inactive_icon.png
+  AssetGenImage get myCourseInactiveIcon =>
+      const AssetGenImage('assets/bottom_tab_bar/my_course_inactive_icon.png');
+
+  /// File path: assets/bottom_tab_bar/profile_active_icon.png
+  AssetGenImage get profileActiveIcon =>
+      const AssetGenImage('assets/bottom_tab_bar/profile_active_icon.png');
+
+  /// File path: assets/bottom_tab_bar/profile_inactive_icon.png
+  AssetGenImage get profileInactiveIcon =>
+      const AssetGenImage('assets/bottom_tab_bar/profile_inactive_icon.png');
+
+  /// File path: assets/bottom_tab_bar/wishlist_active_icon.png
+  AssetGenImage get wishlistActiveIcon =>
+      const AssetGenImage('assets/bottom_tab_bar/wishlist_active_icon.png');
+
+  /// File path: assets/bottom_tab_bar/wishlist_inactive_icon.png
+  AssetGenImage get wishlistInactiveIcon =>
+      const AssetGenImage('assets/bottom_tab_bar/wishlist_inactive_icon.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        exploreActiveIcon,
+        exploreInactiveIcon,
+        myCourseActiveIcon,
+        myCourseInactiveIcon,
+        profileActiveIcon,
+        profileInactiveIcon,
+        wishlistActiveIcon,
+        wishlistInactiveIcon
+      ];
+}
+
 class $AssetsExploreGen {
   const $AssetsExploreGen();
 
@@ -121,6 +169,7 @@ class $AssetsWalkthroughGen {
 class Assets {
   Assets._();
 
+  static const $AssetsBottomTabBarGen bottomTabBar = $AssetsBottomTabBarGen();
   static const $AssetsExploreGen explore = $AssetsExploreGen();
   static const $AssetsPopularTeachersCarouselGen popularTeachersCarousel =
       $AssetsPopularTeachersCarouselGen();

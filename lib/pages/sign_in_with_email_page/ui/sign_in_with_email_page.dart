@@ -7,9 +7,9 @@ import 'package:travel_app/gen/assets.gen.dart';
 import 'package:travel_app/pages/sign_in_with_email_page/features/sign_in_with_email_repository.dart';
 import 'package:travel_app/pages/sign_in_with_email_page/models/sign_in_with_email_form_keys.dart';
 import 'package:travel_app/shared/stores/sign_in_bloc.dart';
-import 'package:travel_app/shared/ui/common_button.dart';
-import 'package:travel_app/shared/ui/common_text_field.dart';
-import 'package:travel_app/shared/ui/dismiss_keyboard.dart';
+import 'package:travel_app/shared/ui/common_button/common_button.dart';
+import 'package:travel_app/shared/ui/common_text_field/common_text_field.dart';
+import 'package:travel_app/shared/ui/dismiss_keyboard/dismiss_keyboard.dart';
 
 @RoutePage()
 class SignInWithEmailPage extends StatefulWidget {

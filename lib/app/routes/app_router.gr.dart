@@ -27,6 +27,18 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ForgotPasswordPage(),
       );
     },
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomePage(),
+      );
+    },
+    MyCourseRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MyCoursePage(),
+      );
+    },
     SignInRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -72,6 +84,34 @@ class ForgotPasswordRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ForgotPasswordRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MyCoursePage]
+class MyCourseRoute extends PageRouteInfo<void> {
+  const MyCourseRoute({List<PageRouteInfo>? children})
+      : super(
+          MyCourseRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MyCourseRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
