@@ -40,6 +40,8 @@ dependencies:
   freezed: ^2.5.2
   flutter_bloc: ^8.1.6
   device_preview: ^1.2.0
+  dio: ^5.6.0
+  pretty_dio_logger: ^1.4.0
 
 dev_dependencies:
   flutter_test:
@@ -84,7 +86,17 @@ flutter:
     - assets/explore/popularCourseImage1.png
     - assets/explore/popularCourseImage2.png
     - assets/explore/popularCourseImage3.png
-    
+    - assets/bottom_tab_bar/explore_active_icon.png
+    - assets/bottom_tab_bar/explore_inactive_icon.png
+    - assets/bottom_tab_bar/my_course_active_icon.png
+    - assets/bottom_tab_bar/my_course_inactive_icon.png
+    - assets/bottom_tab_bar/profile_active_icon.png
+    - assets/bottom_tab_bar/profile_inactive_icon.png
+    - assets/bottom_tab_bar/wishlist_active_icon.png
+    - assets/bottom_tab_bar/wishlist_inactive_icon.png
+    - assets/topic/topicHeaderImage.png
+    - assets/topic/popularInstructor.png
+    - assets/topic/allCoursesImage.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

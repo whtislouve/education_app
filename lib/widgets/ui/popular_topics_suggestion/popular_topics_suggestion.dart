@@ -13,32 +13,32 @@ class PopularTopicsSuggestion extends StatelessWidget {
           ElevatedButton.icon(
             onPressed: () {},
             label: Text("Art and Humanities"),
-            icon: Assets.explore.artAndHumanitiesTopics.image(),
+            icon: Assets.explore.artAndHumanitiesTopics.image(scale: 1.5),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: Text("Finance & Accounting"),
-            icon: Assets.explore.financeAndAccountingTopics.image(),
+            icon: Assets.explore.financeAndAccountingTopics.image(scale: 1.5),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: Text("Business"),
-            icon: Assets.explore.businessTopics.image(),
+            icon: Assets.explore.businessTopics.image(scale: 1.5),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: Text("Design"),
-            icon: Assets.explore.designTopics.image(),
+            icon: Assets.explore.designTopics.image(scale: 1.5),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: Text("Computer"),
-            icon: Assets.explore.computerTopics.image(),
+            icon: Assets.explore.computerTopics.image(scale: 1.5),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: Text("Information Technology"),
-            icon: Assets.explore.informationTechnologyTopics.image(),
+            icon: Assets.explore.informationTechnologyTopics.image(scale: 1.5),
           ),
         ],
       ),

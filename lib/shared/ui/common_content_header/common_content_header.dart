@@ -15,7 +15,11 @@ class CommonContentHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title),
+          Text(
+            title,
+            style:
+                Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 18),
+          ),
           headerButtonWidget,
         ],
       ),

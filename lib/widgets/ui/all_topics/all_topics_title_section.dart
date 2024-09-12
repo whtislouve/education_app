@@ -5,22 +5,29 @@ class AllTopicsTitleSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 60, right: 30),
+      padding: const EdgeInsets.only(left: 150, right: 20, top: 10),
       child: Row(
         children: [
           Expanded(
             child: Container(
-              color: Colors.red,
-              child: const Text(
+              child: Text(
                 'All Topic',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(fontSize: 18),
               ),
             ),
           ),
-          OutlinedButton(
+          TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("Done"))
+              child: Text(
+                "Done",
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontSize: 16, color: Theme.of(context).colorScheme.primary),
+              ))
         ],
       ),
     );

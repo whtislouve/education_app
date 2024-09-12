@@ -138,6 +138,26 @@ class $AssetsSignInGen {
   List<AssetGenImage> get values => [appIcon, eyeOff];
 }
 
+class $AssetsTopicGen {
+  const $AssetsTopicGen();
+
+  /// File path: assets/topic/allCoursesImage.png
+  AssetGenImage get allCoursesImage =>
+      const AssetGenImage('assets/topic/allCoursesImage.png');
+
+  /// File path: assets/topic/popularInstructor.png
+  AssetGenImage get popularInstructor =>
+      const AssetGenImage('assets/topic/popularInstructor.png');
+
+  /// File path: assets/topic/topicHeaderImage.png
+  AssetGenImage get topicHeaderImage =>
+      const AssetGenImage('assets/topic/topicHeaderImage.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [allCoursesImage, popularInstructor, topicHeaderImage];
+}
+
 class $AssetsWalkthroughGen {
   const $AssetsWalkthroughGen();
 
@@ -174,6 +194,7 @@ class Assets {
   static const $AssetsPopularTeachersCarouselGen popularTeachersCarousel =
       $AssetsPopularTeachersCarouselGen();
   static const $AssetsSignInGen signIn = $AssetsSignInGen();
+  static const $AssetsTopicGen topic = $AssetsTopicGen();
   static const $AssetsWalkthroughGen walkthrough = $AssetsWalkthroughGen();
 }
 

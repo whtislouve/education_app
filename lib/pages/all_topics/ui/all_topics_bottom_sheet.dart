@@ -1,18 +1,19 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:travel_app/entities/topics/api/topics_repository.dart';
-import 'package:travel_app/entities/topics/models/topic.dart';
-import 'package:travel_app/entities/topics/store/topic_bloc.dart';
-import 'package:travel_app/entities/topics/ui/topic_card.dart';
+import 'package:travel_app/app/routes/app_router.dart';
+import 'package:travel_app/entities/all_topics_bottom_sheet/api/all_topics_bottom_sheet_repository.dart';
+import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
+import 'package:travel_app/entities/all_topics_bottom_sheet/store/topic_bloc.dart';
+import 'package:travel_app/entities/all_topics_bottom_sheet/ui/topic_card.dart';
 import 'package:travel_app/widgets/ui/all_topics/all_topics_title_section.dart';
-import 'package:travel_app/widgets/ui/all_topics/topic_image.dart';
-import 'package:travel_app/widgets/ui/all_topics/topic_title_section.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 
-class AllTopicsBottomSheet extends StatelessWidget {
-  AllTopicsBottomSheet({super.key});
-  TopicsRepository topicsRepository = TopicsRepository();
+@RoutePage()
+class AllTopicsBottomSheetPage extends StatelessWidget {
+  AllTopicsBottomSheetPage({super.key});
+  AllTopicsBottomSheetRepository topicsRepository =
+      AllTopicsBottomSheetRepository();
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
@@ -30,12 +31,19 @@ class AllTopicsBottomSheet extends StatelessWidget {
                       child: Column(
                         children: [
                           const AllTopicsTitleSection(),
+                          const Divider(
+                            color: Color.fromARGB(162, 158, 158, 158),
+                          ),
                           Container(
                             height: MediaQuery.of(context).size.height,
                             child: ListView.builder(
                                 itemCount: topics.length,
                                 itemBuilder: (context, index) {
                                   return TopicCard(
+                                      onPressed: () {
+                                        context.router.push(
+                                            TopicRoute(topic: topics[index]));
+                                      },
                                       topicImage:
                                           Assets.explore.artAndHumanitiesTopics,
                                       topicTitle: topics[index].title,
@@ -46,7 +54,8 @@ class AllTopicsBottomSheet extends StatelessWidget {
                         ],
                       ),
                     ),
-                errorSendingTopicRequest: (error) => Text("error"));
+                errorSendingTopicRequest: (error) =>
+                    Center(child: Text("Error: $error")));
           },
         ),
       ),
