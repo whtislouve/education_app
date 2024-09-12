@@ -15,6 +15,14 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AllTopicsBottomSheetRoute.name: (routeData) {
+      final args = routeData.argsAs<AllTopicsBottomSheetRouteArgs>(
+          orElse: () => const AllTopicsBottomSheetRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: AllTopicsBottomSheetPage(key: args.key),
+      );
+    },
     ExploreRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -51,6 +59,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SignInWithEmailPage(),
       );
     },
+    TopicRoute.name: (routeData) {
+      final args = routeData.argsAs<TopicRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: TopicPage(
+          key: args.key,
+          topic: args.topic,
+        ),
+      );
+    },
     WalkthroughRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -58,6 +76,36 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AllTopicsBottomSheetPage]
+class AllTopicsBottomSheetRoute
+    extends PageRouteInfo<AllTopicsBottomSheetRouteArgs> {
+  AllTopicsBottomSheetRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          AllTopicsBottomSheetRoute.name,
+          args: AllTopicsBottomSheetRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'AllTopicsBottomSheetRoute';
+
+  static const PageInfo<AllTopicsBottomSheetRouteArgs> page =
+      PageInfo<AllTopicsBottomSheetRouteArgs>(name);
+}
+
+class AllTopicsBottomSheetRouteArgs {
+  const AllTopicsBottomSheetRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'AllTopicsBottomSheetRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -142,6 +190,43 @@ class SignInWithEmailRoute extends PageRouteInfo<void> {
   static const String name = 'SignInWithEmailRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TopicPage]
+class TopicRoute extends PageRouteInfo<TopicRouteArgs> {
+  TopicRoute({
+    Key? key,
+    required Topic topic,
+    List<PageRouteInfo>? children,
+  }) : super(
+          TopicRoute.name,
+          args: TopicRouteArgs(
+            key: key,
+            topic: topic,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'TopicRoute';
+
+  static const PageInfo<TopicRouteArgs> page = PageInfo<TopicRouteArgs>(name);
+}
+
+class TopicRouteArgs {
+  const TopicRouteArgs({
+    this.key,
+    required this.topic,
+  });
+
+  final Key? key;
+
+  final Topic topic;
+
+  @override
+  String toString() {
+    return 'TopicRouteArgs{key: $key, topic: $topic}';
+  }
 }
 
 /// generated route for
