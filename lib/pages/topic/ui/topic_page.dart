@@ -4,8 +4,9 @@ import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
 import 'package:travel_app/entities/topic/ui/course_card.dart';
 import 'package:travel_app/entities/topic/ui/topic_page_title_section.dart';
 import 'package:travel_app/gen/assets.gen.dart';
+import 'package:travel_app/pages/popular_instructors/ui/popular_instructors_bottom_sheet.dart';
 import 'package:travel_app/shared/ui/common_content_header/common_content_header.dart';
-import 'package:travel_app/widgets/ui/popular_instrcurtors/popular_instructors_carousel.dart';
+import 'package:travel_app/widgets/ui/popular_instructors/popular_instructors_carousel.dart';
 import 'package:travel_app/widgets/ui/topic/ui/topic_page_header_image_section.dart';
 
 @RoutePage()
@@ -70,7 +71,14 @@ class TopicPage extends StatelessWidget {
             CommonContentHeader(
               title: "Popular instructors",
               headerButtonWidget: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  showModalBottomSheet(
+                      isScrollControlled: true,
+                      context: context,
+                      builder: (BuildContext context) {
+                        return PopularInstructorsBottomSheetPage();
+                      });
+                },
                 child: Text("See All"),
               ),
             ),

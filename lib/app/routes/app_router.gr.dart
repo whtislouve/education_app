@@ -47,6 +47,14 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const MyCoursePage(),
       );
     },
+    PopularInstructorsBottomSheetRoute.name: (routeData) {
+      final args = routeData.argsAs<PopularInstructorsBottomSheetRouteArgs>(
+          orElse: () => const PopularInstructorsBottomSheetRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: PopularInstructorsBottomSheetPage(key: args.key),
+      );
+    },
     SignInRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -162,6 +170,36 @@ class MyCourseRoute extends PageRouteInfo<void> {
   static const String name = 'MyCourseRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PopularInstructorsBottomSheetPage]
+class PopularInstructorsBottomSheetRoute
+    extends PageRouteInfo<PopularInstructorsBottomSheetRouteArgs> {
+  PopularInstructorsBottomSheetRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PopularInstructorsBottomSheetRoute.name,
+          args: PopularInstructorsBottomSheetRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'PopularInstructorsBottomSheetRoute';
+
+  static const PageInfo<PopularInstructorsBottomSheetRouteArgs> page =
+      PageInfo<PopularInstructorsBottomSheetRouteArgs>(name);
+}
+
+class PopularInstructorsBottomSheetRouteArgs {
+  const PopularInstructorsBottomSheetRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'PopularInstructorsBottomSheetRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for

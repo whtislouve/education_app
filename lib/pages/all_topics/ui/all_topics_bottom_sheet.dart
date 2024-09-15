@@ -8,6 +8,7 @@ import 'package:travel_app/entities/all_topics_bottom_sheet/store/topic_bloc.dar
 import 'package:travel_app/entities/all_topics_bottom_sheet/ui/topic_card.dart';
 import 'package:travel_app/widgets/ui/all_topics/all_topics_title_section.dart';
 import 'package:travel_app/gen/assets.gen.dart';
+import 'package:travel_app/widgets/ui/bottom_sheet_title_section.dart/bottom_sheet_title_section.dart';
 
 @RoutePage()
 class AllTopicsBottomSheetPage extends StatelessWidget {
@@ -30,7 +31,7 @@ class AllTopicsBottomSheetPage extends StatelessWidget {
                     SingleChildScrollView(
                       child: Column(
                         children: [
-                          const AllTopicsTitleSection(),
+                          const BottomSheetTitleSection(title: "All Topics"),
                           const Divider(
                             color: Color.fromARGB(162, 158, 158, 158),
                           ),
