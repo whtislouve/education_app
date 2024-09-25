@@ -15,29 +15,33 @@ class PopularInstructorsBottomSheetBloc extends Bloc<
       : super(PopularInstructorsBottomSheetStates.initialState()) {
     on<PopularInstructorsBottomSheetEvents>(
       (event, emit) async {
-        if (state is _IntitalStatePopularInstructorsBottomSheet) {
-          await repository.getInstructorsData();
-          if (repository.responseModel.errorText == "") {
-            repository.responseModel.responseData["popularInstructors"]
-                .forEach((instructor) => {
-                      popularInstructors.add(PopularInstructorsModel.fromJson({
-                        "id": instructor["id"],
-                        "firstName": instructor["firstName"],
-                        "lastName": instructor["lastName"],
-                        "instructorTopics": instructor["instructorTopics"],
-                        "studentsAmount": instructor["studentsAmount"],
-                        "coursesAmount": instructor["coursesAmount"],
-                      }))
-                    });
-            emit(PopularInstructorsBottomSheetStates
-                .acceptingPopularInstructorsData(
-                    instructors: popularInstructors));
-          } else {
-            emit(PopularInstructorsBottomSheetStates.errorSendingRequest(
-                error: repository.responseModel.errorText));
-          }
-        }
+        await event.map(
+            popularInstructorsButtonPressed: (_) async =>
+                await popularInstructorsButtonPressedEvent(emit));
       },
     );
+  }
+
+  Future popularInstructorsButtonPressedEvent(
+      Emitter<PopularInstructorsBottomSheetStates> emit) async {
+    await repository.getInstructorsData();
+    if (repository.responseModel.errorText == "") {
+      repository.responseModel.responseData["popularInstructors"]
+          .forEach((instructor) => {
+                popularInstructors.add(PopularInstructorsModel.fromJson({
+                  "id": instructor["id"],
+                  "firstName": instructor["firstName"],
+                  "lastName": instructor["lastName"],
+                  "instructorTopics": instructor["instructorTopics"],
+                  "studentsAmount": instructor["studentsAmount"],
+                  "coursesAmount": instructor["coursesAmount"],
+                }))
+              });
+      emit(PopularInstructorsBottomSheetStates.acceptingPopularInstructorsData(
+          instructors: popularInstructors));
+    } else {
+      emit(PopularInstructorsBottomSheetStates.errorSendingRequest(
+          error: repository.responseModel.errorText));
+    }
   }
 }

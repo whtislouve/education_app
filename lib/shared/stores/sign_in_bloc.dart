@@ -15,8 +15,8 @@ class SignInBloc extends Bloc<SignInEvents, SignInStates> {
       event.map(
         signInButtonPressed: (event) async {
           try {
-            print('BLOC signButtonPressed');
-            print(event);
+            // print('BLOC signButtonPressed');
+            // print(event);
             final data = await repository.sendSignInWithEmailRequest(event);
             emit(SignInStates.acceptingSignInResponse(signInToken: data[0]));
           } catch (e) {

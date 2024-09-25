@@ -19,7 +19,7 @@ class AllCoursesBottomSheetPage extends StatelessWidget {
         heightFactor: 0.9,
         child: BlocProvider(
           create: (_) => CourseBloc(courseDetailRepository: courseRepository)
-            ..add(CourseEvents.getCourseDetailData()),
+            ..add(const CourseEvents.getCourseDetailData()),
           child: BlocBuilder<CourseBloc, CourseStates>(
             builder: (context, state) {
               return state.when(

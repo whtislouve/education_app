@@ -26,7 +26,9 @@ class AllTopicsBottomSheetPage extends StatelessWidget {
         child: BlocBuilder<TopicBloc, TopicState>(
           builder: (context, state) {
             return state.when(
-                initialTopicState: () => const Text('initial state'),
+                initialTopicState: () => const Center(
+                      child: Text("Loading..."),
+                    ),
                 acceptingTopicData: (List<Topic> topics) =>
                     SingleChildScrollView(
                       child: Column(
