@@ -1,45 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app/entities/course/api/course_repository.dart';
+import 'package:travel_app/entities/course/models/course_model.dart';
+import 'package:travel_app/entities/course/store/course_bloc.dart';
 import 'package:travel_app/entities/popular_courses_suggestion/ui/popular_courses_suggestion_card.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 
 class PopularCoursesSuggestionCarousel extends StatelessWidget {
-  const PopularCoursesSuggestionCarousel({super.key});
+  PopularCoursesSuggestionCarousel({super.key});
+  CourseRepository courseDetailRepository = CourseRepository();
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          const SizedBox(width: 15),
-          PopularCoursesSuggestionCard(
-            courseAmountTime: '1h 12m',
-            courseAmountLesson: '5',
-            courseImage: Assets.explore.popularCourseImage1,
-            courseTitle: 'How to Start an Amazon FBA store\non a Tight Budget',
-            courseTeacherName: "Grabriella Susi",
-            courseCost: 'IDR 219.000',
-          ),
-          const SizedBox(width: 15),
-          PopularCoursesSuggestionCard(
-            courseAmountTime: '2h 06m',
-            courseAmountLesson: '7',
-            courseTitle:
-                "Beginner to Pro in Excel: Financial\nModeling & Valuation",
-            courseTeacherName: "Azalea Susanti",
-            courseCost: 'IDR 112.000',
-            courseImage: Assets.explore.popularCourseImage2,
-          ),
-          const SizedBox(width: 15),
-          PopularCoursesSuggestionCard(
-            courseAmountTime: '2h 06m',
-            courseAmountLesson: '7',
-            courseTitle: "The Business Intelligence\nAnalyst Course 2022",
-            courseTeacherName: "Bambang Subroto",
-            courseCost: 'IDR 322.000',
-            courseImage: Assets.explore.popularCourseImage3,
-          ),
-          const SizedBox(width: 15),
-        ],
+    return BlocProvider(
+      create: (_) => CourseBloc(courseDetailRepository: courseDetailRepository)
+        ..add(const CourseEvents.getPopularCoursesData()),
+      child: BlocBuilder<CourseBloc, CourseStates>(
+        builder: (context, state) {
+          return state.when(
+              initialState: () => Container(
+                    child: Text("Loading"),
+                  ),
+              acceptingCourseDetailData: (List<CourseModel> courseDetails) =>
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                        children: courseDetails
+                            .map((course) => PopularCoursesSuggestionCard(
+                                  course: course,
+                                ))
+                            .toList()),
+                  ),
+              errorSendingCourseDetailRequest: (String error) => Text(error));
+        },
       ),
     );
   }

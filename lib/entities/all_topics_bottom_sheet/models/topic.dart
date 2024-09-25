@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:travel_app/entities/course/models/course_model.dart';
 
 part 'topic.g.dart';
 part 'topic.freezed.dart';
@@ -12,7 +13,7 @@ class Topic with _$Topic {
     required String fullDescription,
     required List<SubTopics> subTopics,
     required List<Instructors> instructors,
-    required List<Courses> courses,
+    required List<CourseModel> courses,
   }) = _Topic;
 
   factory Topic.fromJson(Map<String, dynamic> json) => _$TopicFromJson(json);
@@ -44,14 +45,14 @@ class Instructors with _$Instructors {
       _$InstructorsFromJson(json);
 }
 
-@freezed
-class Courses with _$Courses {
-  const factory Courses({
-    required String title,
-    required String instructor,
-    required int coursePrice,
-  }) = _Courses;
+// @freezed
+// class Courses with _$Courses {
+//   const factory Courses({
+//     required String title,
+//     required String instructor,
+//     required int coursePrice,
+//   }) = _Courses;
 
-  factory Courses.fromJson(Map<String, dynamic> json) =>
-      _$CoursesFromJson(json);
-}
+//   factory Courses.fromJson(Map<String, dynamic> json) =>
+//       _$CoursesFromJson(json);
+// }

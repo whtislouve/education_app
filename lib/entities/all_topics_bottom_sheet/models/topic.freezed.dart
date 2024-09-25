@@ -25,7 +25,7 @@ mixin _$Topic {
   String get fullDescription => throw _privateConstructorUsedError;
   List<SubTopics> get subTopics => throw _privateConstructorUsedError;
   List<Instructors> get instructors => throw _privateConstructorUsedError;
-  List<Courses> get courses => throw _privateConstructorUsedError;
+  List<CourseModel> get courses => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,7 +43,7 @@ abstract class $TopicCopyWith<$Res> {
       String fullDescription,
       List<SubTopics> subTopics,
       List<Instructors> instructors,
-      List<Courses> courses});
+      List<CourseModel> courses});
 }
 
 /// @nodoc
@@ -90,7 +90,7 @@ class _$TopicCopyWithImpl<$Res, $Val extends Topic>
       courses: null == courses
           ? _value.courses
           : courses // ignore: cast_nullable_to_non_nullable
-              as List<Courses>,
+              as List<CourseModel>,
     ) as $Val);
   }
 }
@@ -108,7 +108,7 @@ abstract class _$$TopicImplCopyWith<$Res> implements $TopicCopyWith<$Res> {
       String fullDescription,
       List<SubTopics> subTopics,
       List<Instructors> instructors,
-      List<Courses> courses});
+      List<CourseModel> courses});
 }
 
 /// @nodoc
@@ -153,7 +153,7 @@ class __$$TopicImplCopyWithImpl<$Res>
       courses: null == courses
           ? _value._courses
           : courses // ignore: cast_nullable_to_non_nullable
-              as List<Courses>,
+              as List<CourseModel>,
     ));
   }
 }
@@ -167,7 +167,7 @@ class _$TopicImpl with DiagnosticableTreeMixin implements _Topic {
       required this.fullDescription,
       required final List<SubTopics> subTopics,
       required final List<Instructors> instructors,
-      required final List<Courses> courses})
+      required final List<CourseModel> courses})
       : _subTopics = subTopics,
         _instructors = instructors,
         _courses = courses;
@@ -197,9 +197,9 @@ class _$TopicImpl with DiagnosticableTreeMixin implements _Topic {
     return EqualUnmodifiableListView(_instructors);
   }
 
-  final List<Courses> _courses;
+  final List<CourseModel> _courses;
   @override
-  List<Courses> get courses {
+  List<CourseModel> get courses {
     if (_courses is EqualUnmodifiableListView) return _courses;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_courses);
@@ -272,7 +272,7 @@ abstract class _Topic implements Topic {
       required final String fullDescription,
       required final List<SubTopics> subTopics,
       required final List<Instructors> instructors,
-      required final List<Courses> courses}) = _$TopicImpl;
+      required final List<CourseModel> courses}) = _$TopicImpl;
 
   factory _Topic.fromJson(Map<String, dynamic> json) = _$TopicImpl.fromJson;
 
@@ -287,7 +287,7 @@ abstract class _Topic implements Topic {
   @override
   List<Instructors> get instructors;
   @override
-  List<Courses> get courses;
+  List<CourseModel> get courses;
   @override
   @JsonKey(ignore: true)
   _$$TopicImplCopyWith<_$TopicImpl> get copyWith =>
@@ -713,187 +713,5 @@ abstract class _Instructors implements Instructors {
   @override
   @JsonKey(ignore: true)
   _$$InstructorsImplCopyWith<_$InstructorsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Courses _$CoursesFromJson(Map<String, dynamic> json) {
-  return _Courses.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Courses {
-  String get title => throw _privateConstructorUsedError;
-  String get instructor => throw _privateConstructorUsedError;
-  int get coursePrice => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CoursesCopyWith<Courses> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CoursesCopyWith<$Res> {
-  factory $CoursesCopyWith(Courses value, $Res Function(Courses) then) =
-      _$CoursesCopyWithImpl<$Res, Courses>;
-  @useResult
-  $Res call({String title, String instructor, int coursePrice});
-}
-
-/// @nodoc
-class _$CoursesCopyWithImpl<$Res, $Val extends Courses>
-    implements $CoursesCopyWith<$Res> {
-  _$CoursesCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? title = null,
-    Object? instructor = null,
-    Object? coursePrice = null,
-  }) {
-    return _then(_value.copyWith(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      instructor: null == instructor
-          ? _value.instructor
-          : instructor // ignore: cast_nullable_to_non_nullable
-              as String,
-      coursePrice: null == coursePrice
-          ? _value.coursePrice
-          : coursePrice // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CoursesImplCopyWith<$Res> implements $CoursesCopyWith<$Res> {
-  factory _$$CoursesImplCopyWith(
-          _$CoursesImpl value, $Res Function(_$CoursesImpl) then) =
-      __$$CoursesImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String title, String instructor, int coursePrice});
-}
-
-/// @nodoc
-class __$$CoursesImplCopyWithImpl<$Res>
-    extends _$CoursesCopyWithImpl<$Res, _$CoursesImpl>
-    implements _$$CoursesImplCopyWith<$Res> {
-  __$$CoursesImplCopyWithImpl(
-      _$CoursesImpl _value, $Res Function(_$CoursesImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? title = null,
-    Object? instructor = null,
-    Object? coursePrice = null,
-  }) {
-    return _then(_$CoursesImpl(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      instructor: null == instructor
-          ? _value.instructor
-          : instructor // ignore: cast_nullable_to_non_nullable
-              as String,
-      coursePrice: null == coursePrice
-          ? _value.coursePrice
-          : coursePrice // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$CoursesImpl with DiagnosticableTreeMixin implements _Courses {
-  const _$CoursesImpl(
-      {required this.title,
-      required this.instructor,
-      required this.coursePrice});
-
-  factory _$CoursesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CoursesImplFromJson(json);
-
-  @override
-  final String title;
-  @override
-  final String instructor;
-  @override
-  final int coursePrice;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Courses(title: $title, instructor: $instructor, coursePrice: $coursePrice)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Courses'))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('instructor', instructor))
-      ..add(DiagnosticsProperty('coursePrice', coursePrice));
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CoursesImpl &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.instructor, instructor) ||
-                other.instructor == instructor) &&
-            (identical(other.coursePrice, coursePrice) ||
-                other.coursePrice == coursePrice));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, title, instructor, coursePrice);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CoursesImplCopyWith<_$CoursesImpl> get copyWith =>
-      __$$CoursesImplCopyWithImpl<_$CoursesImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CoursesImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Courses implements Courses {
-  const factory _Courses(
-      {required final String title,
-      required final String instructor,
-      required final int coursePrice}) = _$CoursesImpl;
-
-  factory _Courses.fromJson(Map<String, dynamic> json) = _$CoursesImpl.fromJson;
-
-  @override
-  String get title;
-  @override
-  String get instructor;
-  @override
-  int get coursePrice;
-  @override
-  @JsonKey(ignore: true)
-  _$$CoursesImplCopyWith<_$CoursesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

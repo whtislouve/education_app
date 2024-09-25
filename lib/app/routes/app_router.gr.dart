@@ -15,12 +15,30 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AllCoursesBottomSheetRoute.name: (routeData) {
+      final args = routeData.argsAs<AllCoursesBottomSheetRouteArgs>(
+          orElse: () => const AllCoursesBottomSheetRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: AllCoursesBottomSheetPage(key: args.key),
+      );
+    },
     AllTopicsBottomSheetRoute.name: (routeData) {
       final args = routeData.argsAs<AllTopicsBottomSheetRouteArgs>(
           orElse: () => const AllTopicsBottomSheetRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: AllTopicsBottomSheetPage(key: args.key),
+      );
+    },
+    CourseDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<CourseDetailRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: CourseDetailPage(
+          key: args.key,
+          course: args.course,
+        ),
       );
     },
     ExploreRoute.name: (routeData) {
@@ -87,6 +105,36 @@ abstract class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
+/// [AllCoursesBottomSheetPage]
+class AllCoursesBottomSheetRoute
+    extends PageRouteInfo<AllCoursesBottomSheetRouteArgs> {
+  AllCoursesBottomSheetRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          AllCoursesBottomSheetRoute.name,
+          args: AllCoursesBottomSheetRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'AllCoursesBottomSheetRoute';
+
+  static const PageInfo<AllCoursesBottomSheetRouteArgs> page =
+      PageInfo<AllCoursesBottomSheetRouteArgs>(name);
+}
+
+class AllCoursesBottomSheetRouteArgs {
+  const AllCoursesBottomSheetRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'AllCoursesBottomSheetRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
 /// [AllTopicsBottomSheetPage]
 class AllTopicsBottomSheetRoute
     extends PageRouteInfo<AllTopicsBottomSheetRouteArgs> {
@@ -113,6 +161,44 @@ class AllTopicsBottomSheetRouteArgs {
   @override
   String toString() {
     return 'AllTopicsBottomSheetRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [CourseDetailPage]
+class CourseDetailRoute extends PageRouteInfo<CourseDetailRouteArgs> {
+  CourseDetailRoute({
+    Key? key,
+    required CourseModel course,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CourseDetailRoute.name,
+          args: CourseDetailRouteArgs(
+            key: key,
+            course: course,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CourseDetailRoute';
+
+  static const PageInfo<CourseDetailRouteArgs> page =
+      PageInfo<CourseDetailRouteArgs>(name);
+}
+
+class CourseDetailRouteArgs {
+  const CourseDetailRouteArgs({
+    this.key,
+    required this.course,
+  });
+
+  final Key? key;
+
+  final CourseModel course;
+
+  @override
+  String toString() {
+    return 'CourseDetailRouteArgs{key: $key, course: $course}';
   }
 }
 

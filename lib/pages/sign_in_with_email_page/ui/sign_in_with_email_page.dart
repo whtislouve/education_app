@@ -102,6 +102,7 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                               foregroundColor:
                                   Theme.of(context).colorScheme.secondary,
                               actionOnPress: () {
+                                context.pushRoute(HomeRoute());
                                 context.read<SignInBloc>().add(
                                     SignInEvents.signInButtonPressed(
                                         _formKey

@@ -1,17 +1,23 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:travel_app/entities/course/api/course_interceptor.dart';
 import 'package:travel_app/shared/api/dio_client/response_model.dart';
 
 class DioClient {
   final Dio dio = Dio()
-    ..interceptors.add(PrettyDioLogger(
-      requestHeader: true,
-      requestBody: true,
-      responseHeader: true,
-      responseBody: true,
-      error: true,
-      compact: false,
-    ));
+    ..interceptors.addAll([
+      PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseHeader: true,
+        responseBody: true,
+        error: true,
+        compact: false,
+      ),
+    ]);
+  // ..interceptors.add(
+
+  // );
 
   Future makeRequest(String url, ResponseModel responseModel) async {
     try {

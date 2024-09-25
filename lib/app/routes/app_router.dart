@@ -11,6 +11,9 @@ import 'package:travel_app/pages/topic/ui/topic_page.dart';
 import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
 import 'package:travel_app/pages/all_topics/ui/all_topics_bottom_sheet.dart';
 import 'package:travel_app/pages/popular_instructors/ui/popular_instructors_bottom_sheet.dart';
+import 'package:travel_app/pages/course_detail/ui/course_detail_page.dart';
+import 'package:travel_app/entities/course/models/course_model.dart';
+import 'package:travel_app/pages/all_courses/ui/all_courses_bottom_sheet.dart';
 part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')
@@ -19,13 +22,15 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(page: WalkthroughRoute.page),
         AutoRoute(page: SignInRoute.page),
-        AutoRoute(page: SignInWithEmailRoute.page),
+        AutoRoute(page: SignInWithEmailRoute.page, initial: true),
         AutoRoute(page: ForgotPasswordRoute.page),
         AutoRoute(page: ExploreRoute.page),
         AutoRoute(page: MyCourseRoute.page),
-        AutoRoute(page: HomeRoute.page, initial: true),
+        AutoRoute(page: HomeRoute.page),
         AutoRoute(page: AllTopicsBottomSheetRoute.page),
         AutoRoute(page: TopicRoute.page),
-        AutoRoute(page: PopularInstructorsBottomSheetRoute.page)
+        AutoRoute(page: PopularInstructorsBottomSheetRoute.page),
+        AutoRoute(page: CourseDetailRoute.page),
+        AutoRoute(page: AllCoursesBottomSheetRoute.page)
       ];
 }

@@ -19,7 +19,7 @@ class PopularInstructorCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 280,
-      margin: EdgeInsets.only(bottom: 30, right: 30, left: 15),
+      // margin: EdgeInsets.only(bottom: 30, right: 30, left: 15),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

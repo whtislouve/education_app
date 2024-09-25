@@ -57,6 +57,17 @@ class $AssetsBottomTabBarGen {
       ];
 }
 
+class $AssetsCourseDetailGen {
+  const $AssetsCourseDetailGen();
+
+  /// File path: assets/courseDetail/courseDetailHeaderImage.png
+  AssetGenImage get courseDetailHeaderImage =>
+      const AssetGenImage('assets/courseDetail/courseDetailHeaderImage.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [courseDetailHeaderImage];
+}
+
 class $AssetsExploreGen {
   const $AssetsExploreGen();
 
@@ -190,6 +201,7 @@ class Assets {
   Assets._();
 
   static const $AssetsBottomTabBarGen bottomTabBar = $AssetsBottomTabBarGen();
+  static const $AssetsCourseDetailGen courseDetail = $AssetsCourseDetailGen();
   static const $AssetsExploreGen explore = $AssetsExploreGen();
   static const $AssetsPopularTeachersCarouselGen popularTeachersCarousel =
       $AssetsPopularTeachersCarouselGen();

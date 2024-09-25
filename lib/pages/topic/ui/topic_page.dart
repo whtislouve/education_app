@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/app/routes/app_router.dart';
 import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
+import 'package:travel_app/entities/course/models/course_model.dart';
 import 'package:travel_app/entities/topic/ui/course_card.dart';
 import 'package:travel_app/entities/topic/ui/topic_page_title_section.dart';
 import 'package:travel_app/gen/assets.gen.dart';
@@ -97,8 +99,13 @@ class TopicPage extends StatelessWidget {
             Column(
               children: topic.courses
                   .map((course) => CourseCard(
+                        onPressed: () {
+                          context.router
+                              .push(CourseDetailRoute(course: course));
+                        },
+                        imageName: course.courseImageName,
                         courseTitle: course.title,
-                        courseInstructor: course.instructor,
+                        courseInstructor: course.instructor.firstName,
                         coursePrice: course.coursePrice,
                       ))
                   .toList(),

@@ -17,7 +17,7 @@ _$TopicImpl _$$TopicImplFromJson(Map<String, dynamic> json) => _$TopicImpl(
           .map((e) => Instructors.fromJson(e as Map<String, dynamic>))
           .toList(),
       courses: (json['courses'] as List<dynamic>)
-          .map((e) => Courses.fromJson(e as Map<String, dynamic>))
+          .map((e) => CourseModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -61,18 +61,4 @@ Map<String, dynamic> _$$InstructorsImplToJson(_$InstructorsImpl instance) =>
       'instructorTopics': instance.instructorTopics,
       'studentsAmount': instance.studentsAmount,
       'coursesAmount': instance.coursesAmount,
-    };
-
-_$CoursesImpl _$$CoursesImplFromJson(Map<String, dynamic> json) =>
-    _$CoursesImpl(
-      title: json['title'] as String,
-      instructor: json['instructor'] as String,
-      coursePrice: (json['coursePrice'] as num).toInt(),
-    );
-
-Map<String, dynamic> _$$CoursesImplToJson(_$CoursesImpl instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'instructor': instance.instructor,
-      'coursePrice': instance.coursePrice,
     };
