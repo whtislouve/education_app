@@ -6,7 +6,6 @@ import 'package:travel_app/entities/all_topics_bottom_sheet/api/all_topics_botto
 import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
 import 'package:travel_app/entities/all_topics_bottom_sheet/store/topic_bloc.dart';
 import 'package:travel_app/entities/all_topics_bottom_sheet/ui/topic_card.dart';
-import 'package:travel_app/widgets/ui/all_topics/all_topics_title_section.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 import 'package:travel_app/widgets/ui/bottom_sheet_title_section.dart/bottom_sheet_title_section.dart';
 

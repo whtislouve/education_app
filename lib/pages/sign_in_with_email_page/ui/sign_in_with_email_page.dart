@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:provider/provider.dart';
 import 'package:travel_app/app/routes/app_router.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 import 'package:travel_app/pages/sign_in_with_email_page/features/sign_in_with_email_repository.dart';
@@ -10,6 +11,7 @@ import 'package:travel_app/shared/stores/sign_in_bloc.dart';
 import 'package:travel_app/shared/ui/common_button/common_button.dart';
 import 'package:travel_app/shared/ui/common_text_field/common_text_field.dart';
 import 'package:travel_app/shared/ui/dismiss_keyboard/dismiss_keyboard.dart';
+import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
 
 @RoutePage()
 class SignInWithEmailPage extends StatefulWidget {
@@ -37,14 +39,17 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = Provider.of<ScreenSizeModel>(context);
+    final screenWidth = mediaQuery.width;
+    final screenHeight = mediaQuery.height;
     return Scaffold(
       appBar: AppBar(),
       body: DismissKeyboard(
         child: SingleChildScrollView(
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           padding: EdgeInsets.only(
-            left: 20,
-            right: 20,
+            left: screenWidth * 0.06,
+            right: screenWidth * 0.06,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,14 +69,14 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(height: 20),
+                            SizedBox(height: screenHeight * 0.02),
                             const CommonTextField(
                               name: 'email',
                               title: 'Email',
                               hintText: 'Type your email',
                             ),
-                            const SizedBox(
-                              height: 20,
+                            SizedBox(
+                              height: screenHeight * 0.02,
                             ),
                             CommonTextField(
                               name: 'password',
@@ -81,28 +86,27 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                               onPressSuffixImage: _showHiddenPassword,
                               obscureText: obscureTextInput,
                             ),
-                            const SizedBox(
-                              height: 20,
+                            SizedBox(
+                              height: screenHeight * 0.02,
                             ),
                             CommonButton(
                               actionOnPress: _goToForgotPasswordPage,
-                              child: Text('Forgot password?'),
                               backgroundColor:
                                   Theme.of(context).colorScheme.error,
                               foregroundColor:
                                   Theme.of(context).colorScheme.onError,
+                              child: const Text('Forgot password?'),
                             ),
-                            const SizedBox(
-                              height: 20,
+                            SizedBox(
+                              height: screenHeight * 0.02,
                             ),
                             CommonButton(
-                              child: Text('Sign in Now'),
                               backgroundColor:
                                   Theme.of(context).colorScheme.primary,
                               foregroundColor:
                                   Theme.of(context).colorScheme.secondary,
                               actionOnPress: () {
-                                context.pushRoute(HomeRoute());
+                                context.pushRoute(const HomeRoute());
                                 context.read<SignInBloc>().add(
                                     SignInEvents.signInButtonPressed(
                                         _formKey
@@ -116,11 +120,12 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                                                 .password]
                                             ?.value));
                               },
+                              child: const Text('Sign in Now'),
                             ),
                           ],
                         ),
                       ),
-                      acceptingSignInResponse: (_) => Text('Loading'),
+                      acceptingSignInResponse: (_) => const Text('Loading'),
                       errorSendSignInData: (errorText) => Text(errorText),
                     );
                   },

@@ -1,14 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/pages/all_courses/ui/all_courses_bottom_sheet.dart';
-
 import 'package:travel_app/pages/all_topics/ui/all_topics_bottom_sheet.dart';
-
 import 'package:travel_app/shared/ui/common_content_header/common_content_header.dart';
-
 import 'package:travel_app/widgets/ui/popular_teacher_suggestion_carousel/popular_teacher_suggestion_carousel.dart';
 import 'package:travel_app/widgets/ui/popular_topics_suggestion/popular_topics_suggestion.dart';
-
 import 'package:travel_app/widgets/ui/popular_courses_suggestion_carousel/popular_courses_suggestion_carousel.dart';
 
 @RoutePage()
@@ -34,7 +30,7 @@ class _ExplorePageState extends State<ExplorePage>
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const PopularTeacherSuggestionCarousel(),
+            const PopularInstructorSuggestionCarousel(),
             CommonContentHeader(
               title: "Topics",
               headerButtonWidget: TextButton(
@@ -61,7 +57,7 @@ class _ExplorePageState extends State<ExplorePage>
                           return AllCoursesBottomSheetPage();
                         });
                   },
-                  child: Text("See All")),
+                  child: const Text("See All")),
             ),
             PopularCoursesSuggestionCarousel()
           ],

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/gen/assets.gen.dart';
+import 'package:provider/provider.dart';
+import 'package:travel_app/entities/topic/ui/course_card_title_section.dart';
+
+import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class CourseCard extends StatelessWidget {
   const CourseCard({
@@ -17,62 +21,49 @@ class CourseCard extends StatelessWidget {
   final String imageName;
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/courseDetail/$imageName'),
-                const SizedBox(width: 15),
-                Container(
-                  width: 255,
-                  height: 90,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+    final mediaQuery = Provider.of<ScreenSizeModel>(context);
+    final screenWidth = mediaQuery.width;
+    final screenHeight = mediaQuery.height;
+    return SizedBox(
+      width: screenWidth,
+      height: screenHeight * 0.135,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return SizeInheritedWidget(
+            maxWidth: constraints.maxWidth,
+            maxHeight: constraints.maxHeight,
+            child: TextButton(
+              onPressed: onPressed,
+              style: ButtonStyle(
+                  padding: WidgetStateProperty.all(EdgeInsets.zero)),
+              child: Column(
+                children: [
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        courseTitle,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium
-                            ?.copyWith(
-                                fontWeight: FontWeight.w600, height: 1.1),
-                      ),
-                      const SizedBox(height: 3),
-                      Text(
-                        courseInstructor,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium
-                            ?.copyWith(color: Colors.grey),
-                      ),
-                      const SizedBox(height: 3),
-                      Text("IDR ${coursePrice}",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium
-                              ?.copyWith(
-                                  color: Theme.of(context).colorScheme.primary))
+                      Image.asset('assets/courseDetail/$imageName'),
+                      SizedBox(width: constraints.maxWidth * 0.01),
+                      CourseCardTitleSection(
+                        courseTitle: courseTitle,
+                        courseInstructor: courseInstructor,
+                        coursePrice: coursePrice,
+                      )
                     ],
                   ),
-                )
-              ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.02,
+                      // vertical: screenHeight * 0.002,
+                    ),
+                    child: const Divider(
+                      color: Color.fromARGB(162, 158, 158, 158),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-            child: Divider(
-              color: const Color.fromARGB(162, 158, 158, 158),
-            ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }

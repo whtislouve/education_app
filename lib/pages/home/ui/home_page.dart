@@ -15,7 +15,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PageController controller = PageController();
-  final tabs = [ExplorePage(), MyCoursePage(), WishlistPage(), ProfilePage()];
+  final tabs = [
+    const ExplorePage(),
+    const MyCoursePage(),
+    const WishlistPage(),
+    const ProfilePage(),
+  ];
   int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {

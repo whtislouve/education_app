@@ -10,6 +10,9 @@ class DarkeningGradient extends StatelessWidget {
     this.padding = const EdgeInsets.all(0),
     this.gradientBegin = Alignment.topCenter,
     this.gradienEnd = Alignment.center,
+    this.width,
+    this.height,
+    this.borderRadiusGeometry,
   });
   final List<Color> colors;
   final Widget? child;
@@ -17,10 +20,17 @@ class DarkeningGradient extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final AlignmentGeometry gradientBegin;
   final AlignmentGeometry gradienEnd;
+  final double? width;
+  final double? height;
+  final BorderRadiusGeometry? borderRadiusGeometry;
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
+      height: height,
       decoration: BoxDecoration(
+        borderRadius: borderRadiusGeometry,
         gradient: LinearGradient(
           begin: gradientBegin,
           end: gradienEnd,

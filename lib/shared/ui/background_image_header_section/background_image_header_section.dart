@@ -1,9 +1,8 @@
-import 'dart:ffi';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 import 'package:travel_app/shared/ui/darkening_gradient/darkening_gradient.dart';
+import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class BackgroundImageHeaderSection extends StatelessWidget {
   const BackgroundImageHeaderSection({
@@ -19,10 +18,16 @@ class BackgroundImageHeaderSection extends StatelessWidget {
   final Widget titleWidget;
   @override
   Widget build(BuildContext context) {
+    final sizeData = SizeInheritedWidget.of(context);
+    if (sizeData == null) {
+      return const Text("No size data of Layout");
+    }
+    final maxWidth = sizeData.maxWidth;
+    final maxHeight = sizeData.maxHeight;
     return Stack(
       children: [
         Container(
-          height: 304,
+          height: maxHeight * 0.67,
           decoration: BoxDecoration(
               image: DecorationImage(
             image: backgroundImage.provider(),
@@ -39,7 +44,11 @@ class BackgroundImageHeaderSection extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 15, right: 15, top: 30),
+          padding: EdgeInsets.only(
+            left: maxWidth * 0.015,
+            right: maxWidth * 0.015,
+            top: maxHeight * 0.08,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -50,6 +59,7 @@ class BackgroundImageHeaderSection extends StatelessWidget {
                   icon: Icon(
                     Icons.arrow_back_ios,
                     color: Colors.white,
+                    size: maxHeight * 0.08,
                   )),
               addBookMarkIcon
                   ? IconButton(
@@ -57,6 +67,7 @@ class BackgroundImageHeaderSection extends StatelessWidget {
                       icon: Icon(
                         Icons.bookmark_border,
                         color: Colors.white,
+                        size: maxHeight * 0.08,
                       ))
                   : const SizedBox()
             ],

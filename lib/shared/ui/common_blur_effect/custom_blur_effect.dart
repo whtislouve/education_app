@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class CustomBlurEffect extends StatelessWidget {
   const CustomBlurEffect({
@@ -9,15 +8,21 @@ class CustomBlurEffect extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeData = SizeInheritedWidget.of(context);
+    if (sizeData == null) {
+      return const Text("No size data of Layout");
+    }
+    final maxWidth = sizeData.maxWidth;
+    final maxHeight = sizeData.maxHeight;
     return SizedBox(
-      width: 200,
-      height: 300,
+      width: maxWidth * 0.4,
+      height: maxHeight * 0.5,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 100,
-            height: 100,
+            width: maxWidth * 0.15,
+            height: maxHeight * 0.15,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               color: const Color.fromRGBO(122, 151, 255, 0.03),
@@ -32,8 +37,8 @@ class CustomBlurEffect extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: 100,
-                height: 200,
+                width: maxWidth * 0.15,
+                height: maxHeight * 0.3,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: const Color.fromRGBO(107, 184, 255, 0.07),
@@ -48,8 +53,8 @@ class CustomBlurEffect extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                    width: 100,
-                    height: 100,
+                    width: maxWidth * 0.15,
+                    height: maxHeight * 0.15,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: const Color.fromRGBO(127, 48, 255, 0.01),
@@ -62,8 +67,8 @@ class CustomBlurEffect extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 100,
-                    height: 100,
+                    width: maxWidth * 0.15,
+                    height: maxHeight * 0.15,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: const Color.fromRGBO(255, 72, 128, 0.01),

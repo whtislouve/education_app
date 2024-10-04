@@ -21,7 +21,7 @@ class _CustomBottomTabBarState extends State<CustomBottomTabBar> {
     return BottomNavigationBar(
       onTap: (index) {
         widget.controller.animateToPage(index,
-            duration: Duration(microseconds: 1000), curve: Curves.linear);
+            duration: const Duration(microseconds: 1000), curve: Curves.linear);
         setState(() {
           widget.currentTabIndex = index;
         });
@@ -45,8 +45,9 @@ class _CustomBottomTabBarState extends State<CustomBottomTabBar> {
             icon: Assets.bottomTabBar.profileInactiveIcon.image(),
             label: "Profle"),
       ],
-      unselectedLabelStyle: TextStyle(color: Color.fromARGB(178, 40, 40, 40)),
-      selectedLabelStyle: TextStyle(color: Colors.black),
+      unselectedLabelStyle:
+          const TextStyle(color: Color.fromARGB(178, 40, 40, 40)),
+      selectedLabelStyle: const TextStyle(color: Colors.black),
       showSelectedLabels: true,
       showUnselectedLabels: true,
       useLegacyColorScheme: false,

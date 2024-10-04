@@ -1,5 +1,5 @@
 import 'package:travel_app/shared/api/dio_client/dio_client.dart';
-import 'package:dio/dio.dart';
+
 import 'package:travel_app/shared/api/dio_client/response_model.dart';
 
 class AllTopicsBottomSheetRepository {

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/app/routes/app_router.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:travel_app/shared/ui/screen_size_provider/screen_size_provider.dart';
 
 void main() {
-  runApp(DevicePreview(
-    enabled: true,
-    isToolbarVisible: true,
-    builder: (context) => MyApp(), // Wrap your app
+  runApp(ScreenSizeProvider(
+    child: DevicePreview(
+      enabled: true,
+      isToolbarVisible: true,
+      builder: (context) => MyApp(), // Wrap your app
+    ),
   ));
 }
 

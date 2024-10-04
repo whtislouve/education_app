@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/app/routes/app_router.dart';
 import 'package:travel_app/shared/ui/common_button/common_button.dart';
+import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class PageIndicator extends StatelessWidget {
   const PageIndicator({
@@ -36,8 +37,14 @@ class PageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeData = SizeInheritedWidget.of(context);
+    if (sizeData == null) {
+      return const Text("No size info");
+    }
+    final maxWidth = sizeData.maxWidth;
+    final maxHeight = sizeData.maxHeight;
     return Container(
-      margin: EdgeInsets.only(bottom: 30),
+      margin: EdgeInsets.only(bottom: maxHeight * 0.03),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
@@ -48,8 +55,8 @@ class PageIndicator extends StatelessWidget {
           CommonButton(
             backgroundColor: Theme.of(context).colorScheme.primary,
             foregroundColor: Theme.of(context).colorScheme.secondary,
-            buttonWidth: 140,
-            buttonHeight: 48,
+            buttonWidth: maxWidth * 0.4,
+            buttonHeight: maxHeight * 0.065,
             actionOnPress: () {
               _updateCurrentPageIndex(currentPageIndex + 1);
             },

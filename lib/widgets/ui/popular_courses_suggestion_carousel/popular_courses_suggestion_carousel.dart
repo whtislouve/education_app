@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_app/entities/course/api/course_repository.dart';
 import 'package:travel_app/entities/course/models/course_model.dart';
 import 'package:travel_app/entities/course/store/course_bloc.dart';
-import 'package:travel_app/entities/popular_courses_suggestion/ui/popular_courses_suggestion_card.dart';
+import 'package:travel_app/entities/popular_course_suggestion/ui/popular_course_suggestion_card.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 
 class PopularCoursesSuggestionCarousel extends StatelessWidget {
@@ -18,7 +18,7 @@ class PopularCoursesSuggestionCarousel extends StatelessWidget {
         builder: (context, state) {
           return state.when(
               initialState: () => Container(
-                    child: Text("Loading"),
+                    child: const Text("Loading"),
                   ),
               acceptingCourseDetailData: (List<CourseModel> courseDetails) =>
                   SingleChildScrollView(

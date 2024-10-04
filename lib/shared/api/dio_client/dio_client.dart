@@ -4,17 +4,17 @@ import 'package:travel_app/entities/course/api/course_interceptor.dart';
 import 'package:travel_app/shared/api/dio_client/response_model.dart';
 
 class DioClient {
-  final Dio dio = Dio()
-    ..interceptors.addAll([
-      PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-        responseHeader: true,
-        responseBody: true,
-        error: true,
-        compact: false,
-      ),
-    ]);
+  final Dio dio = Dio();
+  // ..interceptors.addAll([
+  //   PrettyDioLogger(
+  //     requestHeader: true,
+  //     requestBody: true,
+  //     responseHeader: true,
+  //     responseBody: true,
+  //     error: true,
+  //     compact: false,
+  //   ),
+  // ]);
   // ..interceptors.add(
 
   // );

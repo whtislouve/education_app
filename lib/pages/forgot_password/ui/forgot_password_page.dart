@@ -1,7 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:travel_app/shared/ui/common_button/common_button.dart';
 import 'package:travel_app/shared/ui/custom_radio_list_tile/custom_radio_list_tile.dart';
+import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 @RoutePage()
 class ForgotPasswordPage extends StatefulWidget {
@@ -25,72 +28,85 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = Provider.of<ScreenSizeModel>(context);
+    final screenWidth = mediaQuery.width;
+    final screenHeight = mediaQuery.height;
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Forgot password",
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Please select option to send a link reset password",
-            ),
-            const SizedBox(height: 30),
-            CustomRadioListTile(
-              title: "Send to your email",
-              description:
-                  "Link reset will be sent to your email address registered",
-              value: ForgotPasswordRadioOptions.email,
-              groupValue: _radioListTileGroupValue,
-              onRadioButtonPress: () =>
-                  _selectRadioListTile(ForgotPasswordRadioOptions.email),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            CustomRadioListTile(
-              title: "Send to your phone number",
-              description:
-                  "Link reset will be sent to your phone number registered",
-              value: ForgotPasswordRadioOptions.phoneNumber,
-              groupValue: _radioListTileGroupValue,
-              onRadioButtonPress: () =>
-                  _selectRadioListTile(ForgotPasswordRadioOptions.phoneNumber),
-            ),
-            const SizedBox(height: 20),
-            CommonButton(
-              backgroundColor: Theme.of(context).colorScheme.primary,
-              foregroundColor: Theme.of(context).colorScheme.secondary,
-              actionOnPress: () {
-                if (_radioListTileGroupValue ==
-                    ForgotPasswordRadioOptions.email)
-                  print("Send email");
-                else
-                  print('Send to phone');
-              },
-              child: const Text(
-                'Send link',
-              ),
-            ),
-            const SizedBox(height: 15),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+        margin: EdgeInsets.only(
+          top: screenWidth * 0.06,
+          left: screenWidth * 0.06,
+          right: screenWidth * 0.06,
+        ),
+        child: LayoutBuilder(builder: (context, constraints) {
+          return SizeInheritedWidget(
+            maxWidth: constraints.maxWidth,
+            maxHeight: constraints.maxHeight,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Didn't recieve link? "),
-                TextButton(
-                  onPressed: () {},
-                  child: Text("Resend link"),
-                  style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                Text(
+                  "Forgot password",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                SizedBox(height: screenHeight * 0.025),
+                const Text(
+                  "Please select option to send a link reset password",
+                ),
+                SizedBox(height: screenHeight * 0.025),
+                CustomRadioListTile(
+                  title: "Send to your email",
+                  description:
+                      "Link reset will be sent to your email address registered",
+                  value: ForgotPasswordRadioOptions.email,
+                  groupValue: _radioListTileGroupValue,
+                  onRadioButtonPress: () =>
+                      _selectRadioListTile(ForgotPasswordRadioOptions.email),
+                ),
+                SizedBox(
+                  height: screenHeight * 0.02,
+                ),
+                CustomRadioListTile(
+                  title: "Send to your phone number",
+                  description:
+                      "Link reset will be sent to your phone number registered",
+                  value: ForgotPasswordRadioOptions.phoneNumber,
+                  groupValue: _radioListTileGroupValue,
+                  onRadioButtonPress: () => _selectRadioListTile(
+                      ForgotPasswordRadioOptions.phoneNumber),
+                ),
+                SizedBox(height: screenHeight * 0.025),
+                CommonButton(
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  foregroundColor: Theme.of(context).colorScheme.secondary,
+                  actionOnPress: () {
+                    if (_radioListTileGroupValue ==
+                        ForgotPasswordRadioOptions.email)
+                      print("Send email");
+                    else
+                      print('Send to phone');
+                  },
+                  child: const Text(
+                    'Send link',
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.025),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Didn't recieve link? "),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                      child: const Text("Resend link"),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
+          );
+        }),
       ),
     );
   }
