@@ -19,10 +19,11 @@ class CourseBloc extends Bloc<CourseEvents, CourseStates> {
     on<CourseEvents>(
       (event, emit) async {
         await event.map(
-          getCourseDetailData: (_) async => await _getCourseDetailData(emit),
-          getPopularCoursesData: (_) async =>
-              await _getPopularCoursesData(emit),
-        );
+            getCourseDetailData: (_) async => await _getCourseDetailData(emit),
+            getPopularCoursesData: (_) async {
+              await Future.delayed(Duration(seconds: 5));
+              await _getPopularCoursesData(emit);
+            });
       },
     );
   }

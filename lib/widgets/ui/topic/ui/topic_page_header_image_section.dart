@@ -26,8 +26,10 @@ class TopicPageHeaderImageSection extends StatelessWidget {
         gradientBegin: Alignment.topCenter,
         gradienEnd: Alignment.bottomCenter,
         colors: const [
-          Color.fromARGB(150, 17, 17, 17),
+          Color.fromARGB(239, 0, 0, 0),
           Color.fromARGB(0, 200, 200, 200),
+          Color.fromARGB(42, 255, 255, 255),
+          Color.fromARGB(255, 255, 255, 255),
           Color.fromARGB(255, 255, 255, 255)
         ],
       ),

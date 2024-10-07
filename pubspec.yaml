@@ -43,6 +43,8 @@ dependencies:
   dio: ^5.6.0
   pretty_dio_logger: ^1.4.0
   provider: ^6.1.2
+  shimmer: ^3.0.0
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -78,15 +80,15 @@ flutter:
     - assets/signIn/eyeOff.png
     - assets/popular_teachers_carousel/popular_teacher_female.png
     - assets/popular_teachers_carousel/popular_teacher_male.png
-    - assets/explore/artAndHumanitiesTopics.png
-    - assets/explore/businessTopics.png
-    - assets/explore/computerTopics.png
-    - assets/explore/designTopics.png
-    - assets/explore/financeAndAccountingTopics.png
-    - assets/explore/informationTechnologyTopics.png
-    - assets/explore/popularCourseImage1.png
-    - assets/explore/popularCourseImage2.png
-    - assets/explore/popularCourseImage3.png
+    - assets/explore/art_and_humanities_topic_image.svg
+    - assets/explore/business_topic_image.svg
+    - assets/explore/computer_topic_image.svg
+    - assets/explore/design_topic_image.svg
+    - assets/explore/finance_and_accounting_topic_image.svg
+    - assets/explore/information_technology_topic_image.svg
+    - assets/explore/popular_course_image1.png
+    - assets/explore/popular_course_image2.png
+    - assets/explore/popular_course_image3.png
     - assets/bottom_tab_bar/explore_active_icon.png
     - assets/bottom_tab_bar/explore_inactive_icon.png
     - assets/bottom_tab_bar/my_course_active_icon.png
@@ -95,13 +97,16 @@ flutter:
     - assets/bottom_tab_bar/profile_inactive_icon.png
     - assets/bottom_tab_bar/wishlist_active_icon.png
     - assets/bottom_tab_bar/wishlist_inactive_icon.png
-    - assets/topic/topicHeaderImage.png
-    - assets/topic/popularInstructor.png
-    - assets/topic/allCoursesImage.png
-    - assets/courseDetail/courseDetailHeaderImage.png
-    - assets/courseDetail/allCourseImage2.png
-    - assets/courseDetail/allCourseImage3.png
-    - assets/courseDetail/allCourseImage4.png
+    - assets/topic/topic_header_image.png
+    - assets/topic/popular_instructor_image.png
+    - assets/topic/all_courses_image.png
+    - assets/course_detail/course_detail_header_image.png
+    - assets/course_detail/all_course_image2.png
+    - assets/course_detail/all_course_image3.png
+    - assets/course_detail/all_course_image4.png
+    - assets/my_course/my_course_ellipse_image.svg
+    - assets/my_course/my_course_cloud_image.svg
+    - assets/my_course/my_course_folder_image.svg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

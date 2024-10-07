@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  PageController controller = PageController();
+  PageController controller = PageController(viewportFraction: 1);
   final tabs = [
     const ExplorePage(),
     const MyCoursePage(),

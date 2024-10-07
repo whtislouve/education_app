@@ -13,7 +13,7 @@ class TopicCard extends StatelessWidget {
     required this.topicDescription,
     required this.onPressed,
   });
-  AssetGenImage topicImage;
+  String topicImage;
   String topicTitle;
   String topicDescription;
   void Function() onPressed;
@@ -24,7 +24,7 @@ class TopicCard extends StatelessWidget {
     final screenWidth = media.width;
     final screenHeight = media.height;
     return Container(
-      width: screenWidth * 0.02,
+      width: screenWidth,
       height: screenHeight * 0.1,
       padding:
           EdgeInsets.only(left: screenWidth * 0.05, right: screenWidth * 0.05),

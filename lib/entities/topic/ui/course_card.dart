@@ -41,7 +41,7 @@ class CourseCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('assets/courseDetail/$imageName'),
+                      Image.asset('assets/course_detail/$imageName'),
                       SizedBox(width: constraints.maxWidth * 0.01),
                       CourseCardTitleSection(
                         courseTitle: courseTitle,

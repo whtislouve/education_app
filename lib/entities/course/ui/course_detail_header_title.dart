@@ -26,7 +26,7 @@ class CourseDetailHeaderTitle extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .titleMedium
-                  ?.copyWith(fontSize: screenWidth * 0.05, height: 1.2)),
+                  ?.copyWith(fontSize: screenHeight * 0.028, height: 1.2)),
           SizedBox(height: screenHeight * 0.02),
           Text(
             maxLines: 3,

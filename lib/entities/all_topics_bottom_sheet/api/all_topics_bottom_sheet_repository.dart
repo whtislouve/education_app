@@ -7,6 +7,6 @@ class AllTopicsBottomSheetRepository {
   ResponseModel responseModel = ResponseModel();
   Future getTopicsData() async {
     responseModel = await dioClient.makeRequest(
-        "https://dummyjson.com/c/f3ec-ee20-47ec-837b", responseModel);
+        "https://dummyjson.com/c/4ca4-96ce-4003-b45f", responseModel);
   }
 }

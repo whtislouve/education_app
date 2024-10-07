@@ -38,7 +38,6 @@ class _CustomRadioListTileState extends State<CustomRadioListTile> {
     if (sizeData == null) {
       return const Text("No size data of Layout");
     }
-    final maxWidth = sizeData.maxWidth;
     final maxHeight = sizeData.maxHeight;
     return OutlinedButton.icon(
       onPressed: widget.onRadioButtonPress,

@@ -36,7 +36,7 @@ class CourseDetailPage extends StatelessWidget {
                   maxWidth: constraints.maxWidth,
                   maxHeight: constraints.maxHeight,
                   child: BackgroundImageHeaderSection(
-                      titlePosition: constraints.maxHeight * 0.7,
+                      titlePosition: constraints.maxHeight * 0.6,
                       addBookMarkIcon: true,
                       backgroundImage:
                           Assets.courseDetail.courseDetailHeaderImage,

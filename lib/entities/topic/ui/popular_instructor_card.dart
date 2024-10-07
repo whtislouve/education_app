@@ -35,7 +35,7 @@ class PopularInstructorCard extends StatelessWidget {
             width: maxHeight * 0.4,
             height: maxHeight * 0.4,
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
-            child: Assets.topic.popularInstructor.image(),
+            child: Assets.topic.popularInstructorImage.image(),
           ),
           SizedBox(width: maxWidth * 0.015),
           SizedBox(

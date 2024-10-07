@@ -60,65 +60,98 @@ class $AssetsBottomTabBarGen {
 class $AssetsCourseDetailGen {
   const $AssetsCourseDetailGen();
 
-  /// File path: assets/courseDetail/courseDetailHeaderImage.png
-  AssetGenImage get courseDetailHeaderImage =>
-      const AssetGenImage('assets/courseDetail/courseDetailHeaderImage.png');
+  /// File path: assets/course_detail/all_course_image2.png
+  AssetGenImage get allCourseImage2 =>
+      const AssetGenImage('assets/course_detail/all_course_image2.png');
+
+  /// File path: assets/course_detail/all_course_image3.png
+  AssetGenImage get allCourseImage3 =>
+      const AssetGenImage('assets/course_detail/all_course_image3.png');
+
+  /// File path: assets/course_detail/all_course_image4.png
+  AssetGenImage get allCourseImage4 =>
+      const AssetGenImage('assets/course_detail/all_course_image4.png');
+
+  /// File path: assets/course_detail/course_detail_header_image.png
+  AssetGenImage get courseDetailHeaderImage => const AssetGenImage(
+      'assets/course_detail/course_detail_header_image.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [courseDetailHeaderImage];
+  List<AssetGenImage> get values => [
+        allCourseImage2,
+        allCourseImage3,
+        allCourseImage4,
+        courseDetailHeaderImage
+      ];
 }
 
 class $AssetsExploreGen {
   const $AssetsExploreGen();
 
-  /// File path: assets/explore/artAndHumanitiesTopics.png
-  AssetGenImage get artAndHumanitiesTopics =>
-      const AssetGenImage('assets/explore/artAndHumanitiesTopics.png');
+  /// File path: assets/explore/art_and_humanities_topic_image.svg
+  String get artAndHumanitiesTopicImage =>
+      'assets/explore/art_and_humanities_topic_image.svg';
 
-  /// File path: assets/explore/businessTopics.png
-  AssetGenImage get businessTopics =>
-      const AssetGenImage('assets/explore/businessTopics.png');
+  /// File path: assets/explore/business_topic_image.svg
+  String get businessTopicImage => 'assets/explore/business_topic_image.svg';
 
-  /// File path: assets/explore/computerTopics.png
-  AssetGenImage get computerTopics =>
-      const AssetGenImage('assets/explore/computerTopics.png');
+  /// File path: assets/explore/computer_topic_image.svg
+  String get computerTopicImage => 'assets/explore/computer_topic_image.svg';
 
-  /// File path: assets/explore/designTopics.png
-  AssetGenImage get designTopics =>
-      const AssetGenImage('assets/explore/designTopics.png');
+  /// File path: assets/explore/design_topic_image.svg
+  String get designTopicImage => 'assets/explore/design_topic_image.svg';
 
-  /// File path: assets/explore/financeAndAccountingTopics.png
-  AssetGenImage get financeAndAccountingTopics =>
-      const AssetGenImage('assets/explore/financeAndAccountingTopics.png');
+  /// File path: assets/explore/finance_and_accounting_topic_image.svg
+  String get financeAndAccountingTopicImage =>
+      'assets/explore/finance_and_accounting_topic_image.svg';
 
-  /// File path: assets/explore/informationTechnologyTopics.png
-  AssetGenImage get informationTechnologyTopics =>
-      const AssetGenImage('assets/explore/informationTechnologyTopics.png');
+  /// File path: assets/explore/information_technology_topic_image.svg
+  String get informationTechnologyTopicImage =>
+      'assets/explore/information_technology_topic_image.svg';
 
-  /// File path: assets/explore/popularCourseImage1.png
+  /// File path: assets/explore/popular_course_image1.png
   AssetGenImage get popularCourseImage1 =>
-      const AssetGenImage('assets/explore/popularCourseImage1.png');
+      const AssetGenImage('assets/explore/popular_course_image1.png');
 
-  /// File path: assets/explore/popularCourseImage2.png
+  /// File path: assets/explore/popular_course_image2.png
   AssetGenImage get popularCourseImage2 =>
-      const AssetGenImage('assets/explore/popularCourseImage2.png');
+      const AssetGenImage('assets/explore/popular_course_image2.png');
 
-  /// File path: assets/explore/popularCourseImage3.png
+  /// File path: assets/explore/popular_course_image3.png
   AssetGenImage get popularCourseImage3 =>
-      const AssetGenImage('assets/explore/popularCourseImage3.png');
+      const AssetGenImage('assets/explore/popular_course_image3.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
-        artAndHumanitiesTopics,
-        businessTopics,
-        computerTopics,
-        designTopics,
-        financeAndAccountingTopics,
-        informationTechnologyTopics,
+  List<dynamic> get values => [
+        artAndHumanitiesTopicImage,
+        businessTopicImage,
+        computerTopicImage,
+        designTopicImage,
+        financeAndAccountingTopicImage,
+        informationTechnologyTopicImage,
         popularCourseImage1,
         popularCourseImage2,
         popularCourseImage3
       ];
+}
+
+class $AssetsMyCourseGen {
+  const $AssetsMyCourseGen();
+
+  /// File path: assets/my_course/my_course_cloud_image.svg
+  String get myCourseCloudImage => 'assets/my_course/my_course_cloud_image.svg';
+
+  /// File path: assets/my_course/my_course_ellipse_image.svg
+  String get myCourseEllipseImage =>
+      'assets/my_course/my_course_ellipse_image.svg';
+
+  /// File path: assets/my_course/my_course_folder_image.svg
+  String get myCourseFolderImage =>
+      'assets/my_course/my_course_folder_image.svg';
+
+  /// List of all assets
+  List<String> get values =>
+      [myCourseCloudImage, myCourseEllipseImage, myCourseFolderImage];
 }
 
 class $AssetsPopularTeachersCarouselGen {
@@ -152,21 +185,21 @@ class $AssetsSignInGen {
 class $AssetsTopicGen {
   const $AssetsTopicGen();
 
-  /// File path: assets/topic/allCoursesImage.png
+  /// File path: assets/topic/all_courses_image.png
   AssetGenImage get allCoursesImage =>
-      const AssetGenImage('assets/topic/allCoursesImage.png');
+      const AssetGenImage('assets/topic/all_courses_image.png');
 
-  /// File path: assets/topic/popularInstructor.png
-  AssetGenImage get popularInstructor =>
-      const AssetGenImage('assets/topic/popularInstructor.png');
+  /// File path: assets/topic/popular_instructor_image.png
+  AssetGenImage get popularInstructorImage =>
+      const AssetGenImage('assets/topic/popular_instructor_image.png');
 
-  /// File path: assets/topic/topicHeaderImage.png
+  /// File path: assets/topic/topic_header_image.png
   AssetGenImage get topicHeaderImage =>
-      const AssetGenImage('assets/topic/topicHeaderImage.png');
+      const AssetGenImage('assets/topic/topic_header_image.png');
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [allCoursesImage, popularInstructor, topicHeaderImage];
+      [allCoursesImage, popularInstructorImage, topicHeaderImage];
 }
 
 class $AssetsWalkthroughGen {
@@ -203,6 +236,7 @@ class Assets {
   static const $AssetsBottomTabBarGen bottomTabBar = $AssetsBottomTabBarGen();
   static const $AssetsCourseDetailGen courseDetail = $AssetsCourseDetailGen();
   static const $AssetsExploreGen explore = $AssetsExploreGen();
+  static const $AssetsMyCourseGen myCourse = $AssetsMyCourseGen();
   static const $AssetsPopularTeachersCarouselGen popularTeachersCarousel =
       $AssetsPopularTeachersCarouselGen();
   static const $AssetsSignInGen signIn = $AssetsSignInGen();

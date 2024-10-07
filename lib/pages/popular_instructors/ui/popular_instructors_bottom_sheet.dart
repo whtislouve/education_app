@@ -6,6 +6,7 @@ import 'package:travel_app/entities/popular_instructors_bottom_sheet/api/popular
 import 'package:travel_app/entities/popular_instructors_bottom_sheet/model/popular_instructors_model.dart';
 import 'package:travel_app/entities/popular_instructors_bottom_sheet/store/popular_instructors_bottom_sheet_bloc.dart';
 import 'package:travel_app/entities/topic/ui/popular_instructor_card.dart';
+import 'package:travel_app/shared/ui/horizontal_card_shimmer/horizontal_card_shimmer.dart';
 import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
 import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 import 'package:travel_app/widgets/ui/bottom_sheet_title_section.dart/bottom_sheet_title_section.dart';
@@ -23,27 +24,27 @@ class PopularInstructorsBottomSheetPage extends StatelessWidget {
     return FractionallySizedBox(
       widthFactor: 1,
       heightFactor: 0.9,
-      child: BlocProvider(
-        create: (_) => PopularInstructorsBottomSheetBloc(repository: repository)
-          ..add(const PopularInstructorsBottomSheetEvents
-              .popularInstructorsButtonPressed()),
-        child: BlocBuilder<PopularInstructorsBottomSheetBloc,
-            PopularInstructorsBottomSheetStates>(
-          builder: (context, state) {
-            return state.when(
-                initialState: () => const Center(
-                      child: Text("Loading"),
-                    ),
-                acceptingPopularInstructorsData: (List<PopularInstructorsModel>
-                        instructors) =>
-                    SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          const BottomSheetTitleSection(
-                              title: "Popular Instructors"),
-                          const Divider(
-                            color: Color.fromARGB(162, 158, 158, 158),
-                          ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const BottomSheetTitleSection(title: "Popular Instructors"),
+            const Divider(
+              color: Color.fromARGB(162, 158, 158, 158),
+            ),
+            BlocProvider(
+              create: (_) =>
+                  PopularInstructorsBottomSheetBloc(repository: repository)
+                    ..add(const PopularInstructorsBottomSheetEvents
+                        .popularInstructorsButtonPressed()),
+              child: BlocBuilder<PopularInstructorsBottomSheetBloc,
+                  PopularInstructorsBottomSheetStates>(
+                builder: (context, state) {
+                  return state.when(
+                      initialState: () =>
+                          const HorizontalCardShimmer(cardsAmount: 6),
+                      acceptingPopularInstructorsData: (List<
+                                  PopularInstructorsModel>
+                              instructors) =>
                           Container(
                             padding: EdgeInsets.only(
                               left: screenWidth * 0.04,
@@ -89,14 +90,14 @@ class PopularInstructorsBottomSheetPage extends StatelessWidget {
                                 ),
                               );
                             }),
-                          )
-                        ],
-                      ),
-                    ),
-                errorSendingRequest: (String error) => Center(
-                      child: Text("Error: $error"),
-                    ));
-          },
+                          ),
+                      errorSendingRequest: (String error) => Center(
+                            child: Text("Error: $error"),
+                          ));
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );

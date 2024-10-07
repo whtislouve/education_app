@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
@@ -17,7 +18,7 @@ class TopicPageTitleSection extends StatelessWidget {
     final maxWidth = sizeData.maxWidth;
     final maxHeight = sizeData.maxHeight;
     return Positioned.fill(
-      top: maxWidth * 0.4,
+      top: maxWidth * 0.57,
       left: maxHeight * 0.06,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,6 +26,7 @@ class TopicPageTitleSection extends StatelessWidget {
           Container(
             width: maxWidth * 0.22,
             height: maxHeight * 0.25,
+            alignment: Alignment.center,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -36,9 +38,13 @@ class TopicPageTitleSection extends StatelessWidget {
                     offset: Offset(0, 15),
                   )
                 ]),
-            child: Assets.explore.designTopics.image(),
+            child: SvgPicture.asset(
+              'assets/explore/designTopic.svg',
+              width: maxHeight * 0.1,
+              height: maxHeight * 0.1,
+            ),
           ),
-          SizedBox(width: maxWidth * 0.015),
+          SizedBox(width: maxWidth * 0.05),
           SizedBox(
             width: maxWidth * 0.6,
             height: maxHeight * 0.5,
@@ -52,7 +58,7 @@ class TopicPageTitleSection extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontSize: maxHeight * 0.065,
+                        fontSize: maxHeight * 0.08,
                         fontWeight: FontWeight.w600,
                         height: 1.1)),
                 SizedBox(height: maxHeight * 0.01),

@@ -28,7 +28,7 @@ class TopicPage extends StatelessWidget {
           children: [
             SizedBox(
               width: screenWidth,
-              height: screenHeight * 0.4,
+              height: screenHeight * 0.45,
               child: LayoutBuilder(builder: (context, constraints) {
                 return SizeInheritedWidget(
                   maxWidth: constraints.maxWidth,
@@ -60,6 +60,7 @@ class TopicPage extends StatelessWidget {
             ),
             Padding(
                 padding: EdgeInsets.only(
+                  top: screenHeight * 0.03,
                   left: screenWidth * 0.04,
                   bottom: screenHeight * 0.025,
                 ),

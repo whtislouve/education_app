@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:travel_app/gen/assets.gen.dart';
 import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
@@ -18,32 +19,35 @@ class PopularTopicsSuggestion extends StatelessWidget {
           ElevatedButton.icon(
             onPressed: () {},
             label: const Text("Art and Humanities"),
-            icon: Assets.explore.artAndHumanitiesTopics.image(scale: 1.5),
+            icon: SvgPicture.asset(
+                "assets/explore/art_and_humanities_topic_image.svg"),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: const Text("Finance & Accounting"),
-            icon: Assets.explore.financeAndAccountingTopics.image(scale: 1.5),
+            icon: SvgPicture.asset(
+                'assets/explore/finance_and_accounting_topic_image.svg'),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: const Text("Business"),
-            icon: Assets.explore.businessTopics.image(scale: 1.5),
+            icon: SvgPicture.asset('assets/explore/business_topic_image.svg'),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: const Text("Design"),
-            icon: Assets.explore.designTopics.image(scale: 1.5),
+            icon: SvgPicture.asset('assets/explore/design_topic_image.svg'),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: const Text("Computer"),
-            icon: Assets.explore.computerTopics.image(scale: 1.5),
+            icon: SvgPicture.asset('assets/explore/computer_topic_image.svg'),
           ),
           ElevatedButton.icon(
             onPressed: () {},
             label: const Text("Information Technology"),
-            icon: Assets.explore.informationTechnologyTopics.image(scale: 1.5),
+            icon: SvgPicture.asset(
+                'assets/explore/information_technology_topic_image.svg'),
           ),
         ],
       ),

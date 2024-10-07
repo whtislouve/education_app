@@ -1,6 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:travel_app/entities/course/api/course_interceptor.dart';
 import 'package:travel_app/shared/api/dio_client/response_model.dart';
 
 class DioClient {
