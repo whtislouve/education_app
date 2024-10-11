@@ -49,9 +49,9 @@ class _SignInPageState extends State<SignInPage> {
                       buttonIcon: Icon(
                         Icons.apple,
                         color: theme.colorScheme.onSecondary,
-                        size: constraints.maxHeight * 0.03,
+                        size: constraints.maxHeight * 0.07,
                       ),
-                      backgroundColor: theme.colorScheme.secondary,
+                      backgroundColor: theme.colorScheme.onPrimary,
                       sideColor:
                           BorderSide(color: theme.colorScheme.onSecondary),
                       child: Text(
@@ -66,8 +66,8 @@ class _SignInPageState extends State<SignInPage> {
                       actionOnPress: () {},
                       buttonIcon: Icon(Icons.g_mobiledata,
                           color: theme.colorScheme.onSecondary,
-                          size: constraints.maxHeight * 0.03),
-                      backgroundColor: theme.colorScheme.secondary,
+                          size: constraints.maxHeight * 0.07),
+                      backgroundColor: theme.colorScheme.onPrimary,
                       sideColor:
                           BorderSide(color: theme.colorScheme.onSecondary),
                       child: Text(
@@ -83,9 +83,9 @@ class _SignInPageState extends State<SignInPage> {
                       buttonIcon: Icon(
                         Icons.facebook,
                         color: theme.colorScheme.onSecondary,
-                        size: constraints.maxHeight * 0.03,
+                        size: constraints.maxHeight * 0.07,
                       ),
-                      backgroundColor: theme.colorScheme.secondary,
+                      backgroundColor: theme.colorScheme.onPrimary,
                       sideColor:
                           BorderSide(color: theme.colorScheme.onSecondary),
                       child: Text(
@@ -123,7 +123,7 @@ class _SignInPageState extends State<SignInPage> {
                       backgroundColor: theme.colorScheme.primary,
                       child: Text(
                         "Sign in with Email",
-                        style: TextStyle(color: theme.colorScheme.secondary),
+                        style: TextStyle(color: theme.colorScheme.onPrimary),
                       ),
                     ),
                     SizedBox(

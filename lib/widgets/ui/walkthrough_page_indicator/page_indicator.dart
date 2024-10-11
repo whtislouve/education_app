@@ -54,7 +54,7 @@ class PageIndicator extends StatelessWidget {
           ),
           CommonButton(
             backgroundColor: Theme.of(context).colorScheme.primary,
-            foregroundColor: Theme.of(context).colorScheme.secondary,
+            foregroundColor: Theme.of(context).colorScheme.onPrimary,
             buttonWidth: maxWidth * 0.4,
             buttonHeight: maxHeight * 0.065,
             actionOnPress: () {

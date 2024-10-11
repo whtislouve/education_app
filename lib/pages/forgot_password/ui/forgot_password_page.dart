@@ -79,7 +79,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 SizedBox(height: screenHeight * 0.025),
                 CommonButton(
                   backgroundColor: Theme.of(context).colorScheme.primary,
-                  foregroundColor: Theme.of(context).colorScheme.secondary,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
                   actionOnPress: () {
                     if (_radioListTileGroupValue ==
                         ForgotPasswordRadioOptions.email)
