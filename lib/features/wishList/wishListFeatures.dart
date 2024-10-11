@@ -1,5 +1,5 @@
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/shared/db/course_db.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/shared/db/course_db.dart';
 
 class WishListFeatures {
   Future<List<Map<String, dynamic>>> getCourse() async {

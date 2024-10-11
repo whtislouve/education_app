@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:travel_app/gen/assets.gen.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 
 class CommonTextField extends StatefulWidget {
   const CommonTextField({
@@ -12,6 +13,7 @@ class CommonTextField extends StatefulWidget {
     this.onPressSuffixImage,
     this.obscureText = false,
     this.keyboardType,
+    this.validator,
   });
   final String name;
   final String title;
@@ -20,6 +22,8 @@ class CommonTextField extends StatefulWidget {
   final void Function()? onPressSuffixImage;
   final bool obscureText;
   final TextInputType? keyboardType;
+
+  final String? Function(String?)? validator;
   @override
   State<CommonTextField> createState() => _CommonTextFieldState();
 }
@@ -38,11 +42,17 @@ class _CommonTextFieldState extends State<CommonTextField> {
           name: widget.name,
           keyboardType: widget.keyboardType,
           autofocus: true,
+          validator: widget.validator,
           decoration: InputDecoration(
             hintText: widget.hintText,
             hintStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
                   color: Theme.of(context).colorScheme.secondary,
                 ),
+            // errorText: widget.errorText,
+            errorStyle: TextStyle(color: Colors.red, fontSize: 10),
+            errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.zero),
+                borderSide: BorderSide(color: Colors.red)),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             enabledBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(

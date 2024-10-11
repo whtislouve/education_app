@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/app/routes/app_router.dart';
+import 'package:education_app/app/routes/app_router.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:travel_app/app/themes/app_theme.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_provider.dart';
+import 'package:education_app/app/themes/app_theme.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

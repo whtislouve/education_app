@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/features/wishList/wishListFeatures.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/features/wishList/wishListFeatures.dart';
 
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class PopularCourseSuggetionCardImageCaption extends StatelessWidget {
   const PopularCourseSuggetionCardImageCaption({
@@ -55,7 +55,7 @@ class PopularCourseSuggetionCardImageCaption extends StatelessWidget {
             ],
           ),
           IconButton(
-            iconSize: maxHeight * 0.1,
+            iconSize: maxHeight * 0.08,
             padding: EdgeInsets.zero,
             onPressed: () async {
               await WishListFeatures().addCourseToWishList(

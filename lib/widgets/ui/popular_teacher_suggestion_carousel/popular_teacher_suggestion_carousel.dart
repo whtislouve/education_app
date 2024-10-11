@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/entities/popular_instructor_suggestion/api/popular_instructor_suggestion_repository.dart';
-import 'package:travel_app/entities/popular_instructor_suggestion/store/popular_instructor_suggestion_bloc.dart';
-import 'package:travel_app/entities/popular_instructor_suggestion/ui/popular_instructor_suggestion_card_shimmer.dart';
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/entities/popular_instructor_suggestion/ui/popular_instructor_suggestion_card.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/entities/popular_instructor_suggestion/api/popular_instructor_suggestion_repository.dart';
+import 'package:education_app/entities/popular_instructor_suggestion/store/popular_instructor_suggestion_bloc.dart';
+import 'package:education_app/entities/popular_instructor_suggestion/ui/popular_instructor_suggestion_card_shimmer.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/entities/popular_instructor_suggestion/ui/popular_instructor_suggestion_card.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
 
 class PopularInstructorSuggestionCarousel extends StatelessWidget {
   PopularInstructorSuggestionCarousel({super.key});

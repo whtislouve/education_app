@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/shared/ui/shimmer_placeholders/image_placeholder.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/shimmer_placeholders/image_placeholder.dart';
 
 class PopularInstructorSuggestionCardShimmer extends StatelessWidget {
   const PopularInstructorSuggestionCardShimmer({super.key});

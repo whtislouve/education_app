@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app/entities/sign_in_with_email/api/sign_in_with_email_repository.dart';
+import 'package:education_app/entities/sign_in_with_email/api/sign_in_with_email_repository.dart';
 
 part 'sign_in_events.dart';
 part 'sign_in_states.dart';

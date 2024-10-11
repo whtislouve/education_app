@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/app/routes/app_router.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/shared/ui/darkening_gradient/darkening_gradient.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/app/routes/app_router.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/shared/ui/darkening_gradient/darkening_gradient.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
 
 class PopularInstructorSuggestionCard extends StatelessWidget {
   const PopularInstructorSuggestionCard({

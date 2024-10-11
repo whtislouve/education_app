@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/shared/ui/common_button/common_button.dart';
-import 'package:travel_app/shared/ui/custom_radio_list_tile/custom_radio_list_tile.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/shared/ui/common_button/common_button.dart';
+import 'package:education_app/shared/ui/custom_radio_list_tile/custom_radio_list_tile.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 @RoutePage()
 class ForgotPasswordPage extends StatefulWidget {

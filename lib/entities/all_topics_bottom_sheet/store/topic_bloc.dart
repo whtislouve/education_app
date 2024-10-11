@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:travel_app/entities/all_topics_bottom_sheet/api/all_topics_bottom_sheet_repository.dart';
+import 'package:education_app/entities/all_topics_bottom_sheet/api/all_topics_bottom_sheet_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
+import 'package:education_app/entities/all_topics_bottom_sheet/models/topic.dart';
 
 part 'topic_event.dart';
 part 'topic_state.dart';

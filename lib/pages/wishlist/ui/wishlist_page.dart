@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/entities/topic/ui/course_card.dart';
-import 'package:travel_app/features/wishList/wishListFeatures.dart';
+import 'package:education_app/entities/topic/ui/course_card.dart';
+import 'package:education_app/features/wishList/wishListFeatures.dart';
 
-import 'package:travel_app/shared/ui/empty_course_purchase_illustration/empty_course_purchase_widget.dart';
-import 'package:travel_app/shared/ui/horizontal_card_shimmer/horizontal_card_shimmer.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/empty_course_purchase_illustration/empty_course_purchase_widget.dart';
+import 'package:education_app/shared/ui/horizontal_card_shimmer/horizontal_card_shimmer.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
 
 class WishlistPage extends StatefulWidget {
   const WishlistPage({super.key});

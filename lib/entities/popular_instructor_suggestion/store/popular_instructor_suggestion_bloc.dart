@@ -1,7 +1,7 @@
 import "package:flutter_bloc/flutter_bloc.dart";
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/entities/popular_instructor_suggestion/api/popular_instructor_suggestion_repository.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/entities/popular_instructor_suggestion/api/popular_instructor_suggestion_repository.dart';
 
 part 'popular_instructor_suggestion_states.dart';
 part 'popular_instructor_suggestion_events.dart';

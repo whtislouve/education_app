@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:travel_app/entities/course/api/course_repository.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/entities/course/store/course_bloc.dart';
-import 'package:travel_app/entities/popular_course_suggestion/ui/popular_course_suggestion_card.dart';
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
-import 'package:travel_app/widgets/ui/popular_courses_suggestion_carousel/popular_courses_suggestion_carousel_shimmer.dart';
+import 'package:education_app/entities/course/api/course_repository.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/entities/course/store/course_bloc.dart';
+import 'package:education_app/entities/popular_course_suggestion/ui/popular_course_suggestion_card.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/widgets/ui/popular_courses_suggestion_carousel/popular_courses_suggestion_carousel_shimmer.dart';
 
 class PopularCoursesSuggestionCarousel extends StatelessWidget {
   PopularCoursesSuggestionCarousel({super.key});

@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/pages/all_courses/ui/all_courses_bottom_sheet.dart';
-import 'package:travel_app/pages/all_topics/ui/all_topics_bottom_sheet.dart';
-import 'package:travel_app/shared/ui/common_content_header/common_content_header.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
-import 'package:travel_app/widgets/ui/popular_teacher_suggestion_carousel/popular_teacher_suggestion_carousel.dart';
-import 'package:travel_app/widgets/ui/popular_topics_suggestion/popular_topics_suggestion.dart';
-import 'package:travel_app/widgets/ui/popular_courses_suggestion_carousel/popular_courses_suggestion_carousel.dart';
+import 'package:education_app/pages/all_courses/ui/all_courses_bottom_sheet.dart';
+import 'package:education_app/pages/all_topics/ui/all_topics_bottom_sheet.dart';
+import 'package:education_app/shared/ui/common_content_header/common_content_header.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/widgets/ui/popular_teacher_suggestion_carousel/popular_teacher_suggestion_carousel.dart';
+import 'package:education_app/widgets/ui/popular_topics_suggestion/popular_topics_suggestion.dart';
+import 'package:education_app/widgets/ui/popular_courses_suggestion_carousel/popular_courses_suggestion_carousel.dart';
 
 @RoutePage()
 class ExplorePage extends StatefulWidget {
@@ -74,7 +74,7 @@ class _ExplorePageState extends State<ExplorePage>
               ),
               SizedBox(
                 width: screenWidth,
-                height: screenHeight * 0.3,
+                height: screenHeight * 0.4,
                 child: LayoutBuilder(builder: (context, constraints) {
                   return SizeInheritedWidget(
                       maxWidth: constraints.maxWidth,

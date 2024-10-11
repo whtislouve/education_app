@@ -1,8 +1,10 @@
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/entities/popular_course_suggestion/ui/popular_course_suggetion_card_image_caption.dart';
-import 'package:travel_app/shared/ui/darkening_gradient/darkening_gradient.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/entities/popular_course_suggestion/ui/popular_course_suggetion_card_image_caption.dart';
+import 'package:education_app/shared/ui/darkening_gradient/darkening_gradient.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:provider/provider.dart';
 
 class PopularCourseSuggestionCardImageSection extends StatelessWidget {
   const PopularCourseSuggestionCardImageSection({
@@ -24,12 +26,14 @@ class PopularCourseSuggestionCardImageSection extends StatelessWidget {
     }
     final maxWidth = sizeData.maxWidth;
     final maxHeight = sizeData.maxHeight;
+    final mediaQuery = Provider.of<ScreenSizeModel>(context);
+    final screenHeight = mediaQuery.height;
     return Container(
       width: maxWidth,
-      height: maxHeight * 0.6,
+      height: screenHeight < 680 ? maxHeight * 0.62 : maxHeight * 0.5,
       decoration: BoxDecoration(
         image: DecorationImage(
-          fit: BoxFit.fill,
+          fit: BoxFit.contain,
           image: Image.asset("assets/explore/$courseImageName").image,
         ),
       ),

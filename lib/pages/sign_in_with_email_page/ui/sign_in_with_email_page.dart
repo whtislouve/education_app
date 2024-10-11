@@ -2,16 +2,17 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/app/routes/app_router.dart';
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/entities/sign_in_with_email/api/sign_in_with_email_repository.dart';
-import 'package:travel_app/entities/sign_in_with_email/models/sign_in_with_email_form_keys.dart';
-import 'package:travel_app/entities/sign_in_with_email/store/sign_in_bloc.dart';
-import 'package:travel_app/shared/ui/common_button/common_button.dart';
-import 'package:travel_app/shared/ui/common_text_field/common_text_field.dart';
-import 'package:travel_app/shared/ui/dismiss_keyboard/dismiss_keyboard.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/app/routes/app_router.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/entities/sign_in_with_email/api/sign_in_with_email_repository.dart';
+import 'package:education_app/entities/sign_in_with_email/models/sign_in_with_email_form_keys.dart';
+import 'package:education_app/entities/sign_in_with_email/store/sign_in_bloc.dart';
+import 'package:education_app/shared/ui/common_button/common_button.dart';
+import 'package:education_app/shared/ui/common_text_field/common_text_field.dart';
+import 'package:education_app/shared/ui/dismiss_keyboard/dismiss_keyboard.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
 
 @RoutePage()
 class SignInWithEmailPage extends StatefulWidget {
@@ -70,10 +71,16 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(height: screenHeight * 0.02),
-                            const CommonTextField(
+                            CommonTextField(
                               name: 'email',
                               title: 'Email',
                               hintText: 'Type your email',
+                              validator: FormBuilderValidators.compose([
+                                FormBuilderValidators.required(
+                                    errorText: "No email"),
+                                FormBuilderValidators.email(
+                                    errorText: "Incorrect email"),
+                              ]),
                             ),
                             SizedBox(
                               height: screenHeight * 0.02,
@@ -85,6 +92,18 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                               suffixImage: Assets.signIn.eyeOff,
                               onPressSuffixImage: _showHiddenPassword,
                               obscureText: obscureTextInput,
+                              validator: FormBuilderValidators.compose([
+                                FormBuilderValidators.required(
+                                    errorText: "No password"),
+                                // FormBuilderValidators.hasLowercaseChars()
+                                FormBuilderValidators.password(
+                                    minLength: 5,
+                                    minLowercaseCount: 0,
+                                    minUppercaseCount: 0,
+                                    minSpecialCharCount: 0,
+                                    errorText:
+                                        "Wrong password, passwordMinLen:5,lowwerCase:0,upperCase:0"),
+                              ]),
                             ),
                             SizedBox(
                               height: screenHeight * 0.02,
@@ -110,19 +129,22 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                               foregroundColor:
                                   Theme.of(context).colorScheme.onPrimary,
                               actionOnPress: () {
-                                context.pushRoute(const HomeRoute());
-                                context.read<SignInBloc>().add(
-                                    SignInEvents.signInButtonPressed(
-                                        _formKey
-                                            .currentState
-                                            ?.fields[
-                                                SignInWithEmailFormKeys.email]
-                                            ?.value,
-                                        _formKey
-                                            .currentState
-                                            ?.fields[SignInWithEmailFormKeys
-                                                .password]
-                                            ?.value));
+                                if (_formKey.currentState?.saveAndValidate() ??
+                                    false) {
+                                  context.pushRoute(const HomeRoute());
+                                  context.read<SignInBloc>().add(
+                                      SignInEvents.signInButtonPressed(
+                                          _formKey
+                                              .currentState
+                                              ?.fields[
+                                                  SignInWithEmailFormKeys.email]
+                                              ?.value,
+                                          _formKey
+                                              .currentState
+                                              ?.fields[SignInWithEmailFormKeys
+                                                  .password]
+                                              ?.value));
+                                }
                               },
                               child: const Text('Sign in Now'),
                             ),

@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/app/routes/app_router.dart';
-import 'package:travel_app/shared/ui/common_button/common_button.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/app/routes/app_router.dart';
+import 'package:education_app/shared/ui/common_button/common_button.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class PageIndicator extends StatelessWidget {
   const PageIndicator({

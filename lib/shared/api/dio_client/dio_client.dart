@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:travel_app/shared/api/dio_client/response_model.dart';
+import 'package:education_app/shared/api/dio_client/response_model.dart';
 
 class DioClient {
   final Dio dio = Dio();

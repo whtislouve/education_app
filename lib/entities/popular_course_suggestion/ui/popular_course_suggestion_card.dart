@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/app/routes/app_router.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/entities/popular_course_suggestion/ui/popular_course_suggestion_card_image_section.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/app/routes/app_router.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/entities/popular_course_suggestion/ui/popular_course_suggestion_card_image_section.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class PopularCoursesSuggestionCard extends StatelessWidget {
   const PopularCoursesSuggestionCard({
@@ -22,7 +22,7 @@ class PopularCoursesSuggestionCard extends StatelessWidget {
     final screenHeight = mediaQuery.height;
     return Container(
       width: screenWidth * 0.65,
-      height: screenHeight * 0.4,
+      height: screenHeight * 0.62,
       margin: EdgeInsets.only(right: screenWidth * 0.02),
       child: LayoutBuilder(
         builder: (context, constraints) {
@@ -40,7 +40,7 @@ class PopularCoursesSuggestionCard extends StatelessWidget {
                 ),
                 SizedBox(
                   width: constraints.maxWidth,
-                  height: constraints.maxHeight * 0.1,
+                  height: constraints.maxHeight * 0.15,
                   child: TextButton(
                     style: ButtonStyle(
                         padding: WidgetStateProperty.all(EdgeInsets.zero)),
@@ -49,7 +49,7 @@ class PopularCoursesSuggestionCard extends StatelessWidget {
                     },
                     child: Padding(
                       padding: EdgeInsets.only(
-                          top: constraints.maxHeight * 0.02,
+                          // top: constraints.maxHeight * 0.02,
                           bottom: constraints.maxHeight * 0.01),
                       child: Text(course.title,
                           style: Theme.of(context)

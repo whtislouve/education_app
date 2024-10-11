@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class TopicPageTitleSection extends StatelessWidget {
   const TopicPageTitleSection({

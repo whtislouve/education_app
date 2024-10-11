@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
 
 class PopularTopicsSuggestion extends StatelessWidget {
   const PopularTopicsSuggestion({super.key});

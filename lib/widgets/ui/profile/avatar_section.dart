@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
-import 'package:travel_app/widgets/ui/profile/avatar_gradient_arc.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/widgets/ui/profile/avatar_gradient_arc.dart';
 
 class AvatarSection extends StatelessWidget {
   const AvatarSection({super.key});
@@ -26,9 +27,9 @@ class AvatarSection extends StatelessWidget {
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: Image.asset("assets/explore/popular_course_image2.png")
+                image: Image.asset('assets/profile/default_avatar_image.png')
                     .image,
-                fit: BoxFit.fill,
+                fit: BoxFit.contain,
               )),
         ),
         CustomPaint(

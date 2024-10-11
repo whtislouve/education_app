@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/shared/ui/common_blur_effect/custom_blur_effect.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/shared/ui/common_blur_effect/custom_blur_effect.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class Walkthrough extends StatelessWidget {
   final String title;

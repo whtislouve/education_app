@@ -1,7 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
+import 'package:education_app/entities/all_topics_bottom_sheet/models/topic.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
 
 Future<Database> initDB() async {
   return openDatabase(

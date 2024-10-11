@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/widgets/ui/all_topics/topic_card_image.dart';
-import 'package:travel_app/widgets/ui/all_topics/topic_card_title_section.dart';
-import 'package:travel_app/gen/assets.gen.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/widgets/ui/all_topics/topic_card_image.dart';
+import 'package:education_app/widgets/ui/all_topics/topic_card_title_section.dart';
 
 class TopicCard extends StatelessWidget {
   TopicCard({

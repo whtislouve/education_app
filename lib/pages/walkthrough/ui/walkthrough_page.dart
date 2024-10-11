@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/entities/walkthrough/walkthrough.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
-import 'package:travel_app/widgets/ui/walkthrough_page_indicator/page_indicator.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/entities/walkthrough/walkthrough.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/widgets/ui/walkthrough_page_indicator/page_indicator.dart';
 
 @RoutePage()
 class WalkthroughPage extends StatefulWidget {

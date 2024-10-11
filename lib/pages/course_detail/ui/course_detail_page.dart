@@ -1,18 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/entities/course/ui/course_detail_header_title.dart';
-import 'package:travel_app/entities/course/ui/course_detail_review_mark.dart';
-import 'package:travel_app/entities/course/ui/course_overview_tile.dart';
-import 'package:travel_app/entities/topic/ui/popular_instructor_card.dart';
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/entities/course/ui/course_detail_review_card.dart';
-import 'package:travel_app/shared/ui/background_image_header_section/background_image_header_section.dart';
-import 'package:travel_app/shared/ui/common_button/common_button.dart';
-import 'package:travel_app/shared/ui/common_content_header/common_content_header.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/entities/course/ui/course_detail_header_title.dart';
+import 'package:education_app/entities/course/ui/course_detail_review_mark.dart';
+import 'package:education_app/entities/course/ui/course_overview_tile.dart';
+import 'package:education_app/entities/topic/ui/popular_instructor_card.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/entities/course/ui/course_detail_review_card.dart';
+import 'package:education_app/shared/ui/background_image_header_section/background_image_header_section.dart';
+import 'package:education_app/shared/ui/common_button/common_button.dart';
+import 'package:education_app/shared/ui/common_content_header/common_content_header.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 @RoutePage()
 class CourseDetailPage extends StatelessWidget {
@@ -185,7 +185,7 @@ class CourseDetailPage extends StatelessWidget {
                             backgroundColor:
                                 Theme.of(context).colorScheme.primary,
                             foregroundColor:
-                                Theme.of(context).colorScheme.secondary,
+                                Theme.of(context).colorScheme.onPrimary,
                             child: const Text("Enroll now"),
                           )
                         ],

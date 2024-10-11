@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/app/routes/app_router.dart';
-import 'package:travel_app/shared/ui/common_button/common_button.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
-import 'package:travel_app/widgets/ui/sign_in/sign_in_header.dart';
-import 'package:travel_app/widgets/ui/sign_in/terms_and_privacy_policy.dart';
+import 'package:education_app/app/routes/app_router.dart';
+import 'package:education_app/shared/ui/common_button/common_button.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/widgets/ui/sign_in/sign_in_header.dart';
+import 'package:education_app/widgets/ui/sign_in/terms_and_privacy_policy.dart';
 
 @RoutePage()
 class SignInPage extends StatefulWidget {

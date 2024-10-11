@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/shared/ui/darkening_gradient/darkening_gradient.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/shared/ui/darkening_gradient/darkening_gradient.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class TopicPageHeaderImageSection extends StatelessWidget {
   const TopicPageHeaderImageSection({super.key});

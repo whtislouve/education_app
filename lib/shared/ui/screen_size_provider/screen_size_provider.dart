@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
 
 class ScreenSizeProvider extends StatelessWidget {
   final Widget child;
@@ -11,8 +11,8 @@ class ScreenSizeProvider extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     final screenSize =
         ScreenSizeModel(mediaQuery.size.width, mediaQuery.size.height);
-    print(screenSize.width);
-    print(screenSize.height);
+    // print(screenSize.width);
+    // print(screenSize.height);
     return Provider<ScreenSizeModel>.value(
       value: screenSize,
       child: child,

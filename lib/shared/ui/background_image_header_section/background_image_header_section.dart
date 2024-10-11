@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/features/wishList/wishListFeatures.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/features/wishList/wishListFeatures.dart';
 
-import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/shared/ui/darkening_gradient/darkening_gradient.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/gen/assets.gen.dart';
+import 'package:education_app/shared/ui/darkening_gradient/darkening_gradient.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class BackgroundImageHeaderSection extends StatelessWidget {
   const BackgroundImageHeaderSection({

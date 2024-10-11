@@ -2,15 +2,15 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/app/routes/app_router.dart';
-import 'package:travel_app/entities/all_topics_bottom_sheet/api/all_topics_bottom_sheet_repository.dart';
-import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
-import 'package:travel_app/entities/all_topics_bottom_sheet/store/topic_bloc.dart';
-import 'package:travel_app/entities/topic/models/topic_image.dart';
-import 'package:travel_app/shared/ui/horizontal_card_shimmer/horizontal_card_shimmer.dart';
-import 'package:travel_app/entities/all_topics_bottom_sheet/ui/topic_card.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/widgets/ui/bottom_sheet_title_section.dart/bottom_sheet_title_section.dart';
+import 'package:education_app/app/routes/app_router.dart';
+import 'package:education_app/entities/all_topics_bottom_sheet/api/all_topics_bottom_sheet_repository.dart';
+import 'package:education_app/entities/all_topics_bottom_sheet/models/topic.dart';
+import 'package:education_app/entities/all_topics_bottom_sheet/store/topic_bloc.dart';
+import 'package:education_app/entities/topic/models/topic_image.dart';
+import 'package:education_app/shared/ui/horizontal_card_shimmer/horizontal_card_shimmer.dart';
+import 'package:education_app/entities/all_topics_bottom_sheet/ui/topic_card.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/widgets/ui/bottom_sheet_title_section.dart/bottom_sheet_title_section.dart';
 
 @RoutePage()
 class AllTopicsBottomSheetPage extends StatelessWidget {

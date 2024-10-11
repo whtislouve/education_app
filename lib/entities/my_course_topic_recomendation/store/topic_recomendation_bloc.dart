@@ -1,7 +1,7 @@
 import "package:flutter_bloc/flutter_bloc.dart";
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
-import 'package:travel_app/entities/my_course_topic_recomendation/api/topic_recomendation_repository.dart';
+import 'package:education_app/entities/all_topics_bottom_sheet/models/topic.dart';
+import 'package:education_app/entities/my_course_topic_recomendation/api/topic_recomendation_repository.dart';
 
 part 'topic_recomendation_states.dart';
 part 'topic_recomendation_events.dart';

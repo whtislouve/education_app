@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
+import 'package:education_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
 
 class CustomRadioListTile<T> extends StatefulWidget {
   const CustomRadioListTile({

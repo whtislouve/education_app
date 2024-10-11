@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app/entities/course/api/course_repository.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
-import 'package:travel_app/shared/api/dio_client/response_model.dart';
+import 'package:education_app/entities/course/api/course_repository.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
+import 'package:education_app/shared/api/dio_client/response_model.dart';
 
 part 'course_events.dart';
 part 'course_states.dart';

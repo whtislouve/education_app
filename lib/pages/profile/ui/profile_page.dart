@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/shared/ui/common_button/common_button.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
-import 'package:travel_app/widgets/ui/profile/avatar_section.dart';
-import 'package:travel_app/widgets/ui/profile/profile_header.dart';
-import 'package:travel_app/widgets/ui/profile/profile_menu_tile.dart';
+import 'package:education_app/shared/ui/common_button/common_button.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/widgets/ui/profile/avatar_section.dart';
+import 'package:education_app/widgets/ui/profile/profile_header.dart';
+import 'package:education_app/widgets/ui/profile/profile_menu_tile.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});

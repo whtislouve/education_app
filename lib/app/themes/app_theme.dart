@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/shared/ui/screen_size_provider/screen_size_model.dart';
+import 'package:education_app/shared/ui/screen_size_provider/screen_size_model.dart';
 
 class AppTheme {
   static ThemeData lightTheme(BuildContext context) {

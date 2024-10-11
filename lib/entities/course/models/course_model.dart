@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app/entities/all_topics_bottom_sheet/models/topic.dart';
+import 'package:education_app/entities/all_topics_bottom_sheet/models/topic.dart';
 
 part 'course_model.g.dart';
 part 'course_model.freezed.dart';

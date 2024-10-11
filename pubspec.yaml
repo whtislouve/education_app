@@ -1,4 +1,4 @@
-name: travel_app
+name: education_app
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -46,6 +46,7 @@ dependencies:
   shimmer: ^3.0.0
   flutter_svg: ^2.0.10+1
   sqflite: ^2.3.3+1
+  form_builder_validators: ^11.0.0
 
 dev_dependencies:
   flutter_test:
@@ -108,6 +109,7 @@ flutter:
     - assets/my_course/my_course_ellipse_image.svg
     - assets/my_course/my_course_cloud_image.svg
     - assets/my_course/my_course_folder_image.svg
+    - assets/profile/default_avatar_image.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

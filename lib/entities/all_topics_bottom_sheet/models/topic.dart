@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app/entities/course/models/course_model.dart';
+import 'package:education_app/entities/course/models/course_model.dart';
 
 part 'topic.g.dart';
 part 'topic.freezed.dart';
