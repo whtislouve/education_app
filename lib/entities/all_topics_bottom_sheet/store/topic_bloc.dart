@@ -16,7 +16,7 @@ class TopicBloc extends Bloc<TopicEvent, TopicState> {
     on<TopicEvent>((event, emit) async {
       await event.map(
           allTopicButtonPressed: (_) async => {
-                await Future.delayed(const Duration(seconds: 2)),
+                await Future.delayed(const Duration(seconds: 1)),
                 await allTopicButtonPressedEvent(emit),
               });
     });

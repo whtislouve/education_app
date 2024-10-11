@@ -66,18 +66,21 @@ class _MyCoursePageState extends State<MyCoursePage>
                 style: TextStyle(color: Colors.grey),
               ),
               SizedBox(height: screenHeight * 0.1),
-              CommonContentHeader(
-                  title: "Recomendation Topics",
-                  headerButtonWidget: TextButton(
-                    onPressed: () {
-                      showBottomSheet(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AllTopicsBottomSheetPage();
-                          });
-                    },
-                    child: const Text("All Topics"),
-                  )),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.025),
+                child: CommonContentHeader(
+                    title: "Recomendation Topics",
+                    headerButtonWidget: TextButton(
+                      onPressed: () {
+                        showBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AllTopicsBottomSheetPage();
+                            });
+                      },
+                      child: const Text("All Topics"),
+                    )),
+              ),
               BlocProvider(
                 create: (_) =>
                     TopicRecomendationBloc(repository: recomendationRepository)
@@ -89,12 +92,14 @@ class _MyCoursePageState extends State<MyCoursePage>
                     return state.when(
                         initailState: () => SizedBox(
                             width: screenWidth,
-                            height: screenHeight * 0.4,
+                            height: screenHeight * 0.36,
                             child: const HorizontalCardShimmer(cardsAmount: 3)),
                         acceptingTopicRecomendationData:
                             (List<Topic> recomendationTopics) => SizedBox(
                                   width: screenWidth,
-                                  height: screenHeight * 0.4,
+                                  height: screenHeight *
+                                      0.12 *
+                                      recomendationTopics.length,
                                   child: Column(
                                       children: List.generate(
                                           recomendationTopics.length,

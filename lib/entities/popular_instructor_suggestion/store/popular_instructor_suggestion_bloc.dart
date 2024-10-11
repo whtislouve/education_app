@@ -33,6 +33,7 @@ class PopularInstructorSuggestionBloc extends Bloc<
       repository.responseModel.responseData['detailCourse']
           .forEach((course) => {
                 popularInstructorsCoursesList.add(CourseModel.fromJson({
+                  "id": course["id"],
                   "title": course["title"],
                   "totalLessonsTime": course["totalLessonsTime"],
                   "lessonsAmount": course["lessonsAmount"],

@@ -20,6 +20,7 @@ CourseModel _$CourseModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CourseModel {
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get totalLessonsTime => throw _privateConstructorUsedError;
   int get lessonsAmount => throw _privateConstructorUsedError;
@@ -43,7 +44,8 @@ abstract class $CourseModelCopyWith<$Res> {
       _$CourseModelCopyWithImpl<$Res, CourseModel>;
   @useResult
   $Res call(
-      {String title,
+      {String id,
+      String title,
       String totalLessonsTime,
       int lessonsAmount,
       String description,
@@ -70,6 +72,7 @@ class _$CourseModelCopyWithImpl<$Res, $Val extends CourseModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? totalLessonsTime = null,
     Object? lessonsAmount = null,
@@ -81,6 +84,10 @@ class _$CourseModelCopyWithImpl<$Res, $Val extends CourseModel>
     Object? reviews = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -146,7 +153,8 @@ abstract class _$$CourseModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title,
+      {String id,
+      String title,
       String totalLessonsTime,
       int lessonsAmount,
       String description,
@@ -173,6 +181,7 @@ class __$$CourseModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? totalLessonsTime = null,
     Object? lessonsAmount = null,
@@ -184,6 +193,10 @@ class __$$CourseModelImplCopyWithImpl<$Res>
     Object? reviews = null,
   }) {
     return _then(_$CourseModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -228,7 +241,8 @@ class __$$CourseModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CourseModelImpl implements _CourseModel {
   const _$CourseModelImpl(
-      {required this.title,
+      {required this.id,
+      required this.title,
       required this.totalLessonsTime,
       required this.lessonsAmount,
       required this.description,
@@ -242,6 +256,8 @@ class _$CourseModelImpl implements _CourseModel {
   factory _$CourseModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CourseModelImplFromJson(json);
 
+  @override
+  final String id;
   @override
   final String title;
   @override
@@ -268,7 +284,7 @@ class _$CourseModelImpl implements _CourseModel {
 
   @override
   String toString() {
-    return 'CourseModel(title: $title, totalLessonsTime: $totalLessonsTime, lessonsAmount: $lessonsAmount, description: $description, coursePrice: $coursePrice, courseImageName: $courseImageName, courseOverview: $courseOverview, instructor: $instructor, reviews: $reviews)';
+    return 'CourseModel(id: $id, title: $title, totalLessonsTime: $totalLessonsTime, lessonsAmount: $lessonsAmount, description: $description, coursePrice: $coursePrice, courseImageName: $courseImageName, courseOverview: $courseOverview, instructor: $instructor, reviews: $reviews)';
   }
 
   @override
@@ -276,6 +292,7 @@ class _$CourseModelImpl implements _CourseModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CourseModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.totalLessonsTime, totalLessonsTime) ||
                 other.totalLessonsTime == totalLessonsTime) &&
@@ -298,6 +315,7 @@ class _$CourseModelImpl implements _CourseModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       title,
       totalLessonsTime,
       lessonsAmount,
@@ -324,7 +342,8 @@ class _$CourseModelImpl implements _CourseModel {
 
 abstract class _CourseModel implements CourseModel {
   const factory _CourseModel(
-      {required final String title,
+      {required final String id,
+      required final String title,
       required final String totalLessonsTime,
       required final int lessonsAmount,
       required final String description,
@@ -337,6 +356,8 @@ abstract class _CourseModel implements CourseModel {
   factory _CourseModel.fromJson(Map<String, dynamic> json) =
       _$CourseModelImpl.fromJson;
 
+  @override
+  String get id;
   @override
   String get title;
   @override
@@ -367,6 +388,7 @@ CourseOverview _$CourseOverviewFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CourseOverview {
+  String get courseId => throw _privateConstructorUsedError;
   int get hoursOnDemandVideo => throw _privateConstructorUsedError;
   int get articlesAmount => throw _privateConstructorUsedError;
   int get amountResources => throw _privateConstructorUsedError;
@@ -388,7 +410,8 @@ abstract class $CourseOverviewCopyWith<$Res> {
       _$CourseOverviewCopyWithImpl<$Res, CourseOverview>;
   @useResult
   $Res call(
-      {int hoursOnDemandVideo,
+      {String courseId,
+      int hoursOnDemandVideo,
       int articlesAmount,
       int amountResources,
       bool anyTimeAccess,
@@ -410,6 +433,7 @@ class _$CourseOverviewCopyWithImpl<$Res, $Val extends CourseOverview>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? courseId = null,
     Object? hoursOnDemandVideo = null,
     Object? articlesAmount = null,
     Object? amountResources = null,
@@ -419,6 +443,10 @@ class _$CourseOverviewCopyWithImpl<$Res, $Val extends CourseOverview>
     Object? studentsAmount = null,
   }) {
     return _then(_value.copyWith(
+      courseId: null == courseId
+          ? _value.courseId
+          : courseId // ignore: cast_nullable_to_non_nullable
+              as String,
       hoursOnDemandVideo: null == hoursOnDemandVideo
           ? _value.hoursOnDemandVideo
           : hoursOnDemandVideo // ignore: cast_nullable_to_non_nullable
@@ -460,7 +488,8 @@ abstract class _$$CourseOverviewImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int hoursOnDemandVideo,
+      {String courseId,
+      int hoursOnDemandVideo,
       int articlesAmount,
       int amountResources,
       bool anyTimeAccess,
@@ -480,6 +509,7 @@ class __$$CourseOverviewImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? courseId = null,
     Object? hoursOnDemandVideo = null,
     Object? articlesAmount = null,
     Object? amountResources = null,
@@ -489,6 +519,10 @@ class __$$CourseOverviewImplCopyWithImpl<$Res>
     Object? studentsAmount = null,
   }) {
     return _then(_$CourseOverviewImpl(
+      courseId: null == courseId
+          ? _value.courseId
+          : courseId // ignore: cast_nullable_to_non_nullable
+              as String,
       hoursOnDemandVideo: null == hoursOnDemandVideo
           ? _value.hoursOnDemandVideo
           : hoursOnDemandVideo // ignore: cast_nullable_to_non_nullable
@@ -525,7 +559,8 @@ class __$$CourseOverviewImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CourseOverviewImpl implements _CourseOverview {
   const _$CourseOverviewImpl(
-      {required this.hoursOnDemandVideo,
+      {required this.courseId,
+      required this.hoursOnDemandVideo,
       required this.articlesAmount,
       required this.amountResources,
       required this.anyTimeAccess,
@@ -536,6 +571,8 @@ class _$CourseOverviewImpl implements _CourseOverview {
   factory _$CourseOverviewImpl.fromJson(Map<String, dynamic> json) =>
       _$$CourseOverviewImplFromJson(json);
 
+  @override
+  final String courseId;
   @override
   final int hoursOnDemandVideo;
   @override
@@ -553,7 +590,7 @@ class _$CourseOverviewImpl implements _CourseOverview {
 
   @override
   String toString() {
-    return 'CourseOverview(hoursOnDemandVideo: $hoursOnDemandVideo, articlesAmount: $articlesAmount, amountResources: $amountResources, anyTimeAccess: $anyTimeAccess, accessMobileTV: $accessMobileTV, certificatePresence: $certificatePresence, studentsAmount: $studentsAmount)';
+    return 'CourseOverview(courseId: $courseId, hoursOnDemandVideo: $hoursOnDemandVideo, articlesAmount: $articlesAmount, amountResources: $amountResources, anyTimeAccess: $anyTimeAccess, accessMobileTV: $accessMobileTV, certificatePresence: $certificatePresence, studentsAmount: $studentsAmount)';
   }
 
   @override
@@ -561,6 +598,8 @@ class _$CourseOverviewImpl implements _CourseOverview {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CourseOverviewImpl &&
+            (identical(other.courseId, courseId) ||
+                other.courseId == courseId) &&
             (identical(other.hoursOnDemandVideo, hoursOnDemandVideo) ||
                 other.hoursOnDemandVideo == hoursOnDemandVideo) &&
             (identical(other.articlesAmount, articlesAmount) ||
@@ -581,6 +620,7 @@ class _$CourseOverviewImpl implements _CourseOverview {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      courseId,
       hoursOnDemandVideo,
       articlesAmount,
       amountResources,
@@ -606,7 +646,8 @@ class _$CourseOverviewImpl implements _CourseOverview {
 
 abstract class _CourseOverview implements CourseOverview {
   const factory _CourseOverview(
-      {required final int hoursOnDemandVideo,
+      {required final String courseId,
+      required final int hoursOnDemandVideo,
       required final int articlesAmount,
       required final int amountResources,
       required final bool anyTimeAccess,
@@ -617,6 +658,8 @@ abstract class _CourseOverview implements CourseOverview {
   factory _CourseOverview.fromJson(Map<String, dynamic> json) =
       _$CourseOverviewImpl.fromJson;
 
+  @override
+  String get courseId;
   @override
   int get hoursOnDemandVideo;
   @override
@@ -644,6 +687,7 @@ CourseReviews _$CourseReviewsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CourseReviews {
   int get reviewId => throw _privateConstructorUsedError;
+  String get courseId => throw _privateConstructorUsedError;
   String get userFirstName => throw _privateConstructorUsedError;
   String get userLastName => throw _privateConstructorUsedError;
   String get timestamp => throw _privateConstructorUsedError;
@@ -664,6 +708,7 @@ abstract class $CourseReviewsCopyWith<$Res> {
   @useResult
   $Res call(
       {int reviewId,
+      String courseId,
       String userFirstName,
       String userLastName,
       String timestamp,
@@ -685,6 +730,7 @@ class _$CourseReviewsCopyWithImpl<$Res, $Val extends CourseReviews>
   @override
   $Res call({
     Object? reviewId = null,
+    Object? courseId = null,
     Object? userFirstName = null,
     Object? userLastName = null,
     Object? timestamp = null,
@@ -696,6 +742,10 @@ class _$CourseReviewsCopyWithImpl<$Res, $Val extends CourseReviews>
           ? _value.reviewId
           : reviewId // ignore: cast_nullable_to_non_nullable
               as int,
+      courseId: null == courseId
+          ? _value.courseId
+          : courseId // ignore: cast_nullable_to_non_nullable
+              as String,
       userFirstName: null == userFirstName
           ? _value.userFirstName
           : userFirstName // ignore: cast_nullable_to_non_nullable
@@ -730,6 +780,7 @@ abstract class _$$CourseReviewsImplCopyWith<$Res>
   @useResult
   $Res call(
       {int reviewId,
+      String courseId,
       String userFirstName,
       String userLastName,
       String timestamp,
@@ -749,6 +800,7 @@ class __$$CourseReviewsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? reviewId = null,
+    Object? courseId = null,
     Object? userFirstName = null,
     Object? userLastName = null,
     Object? timestamp = null,
@@ -760,6 +812,10 @@ class __$$CourseReviewsImplCopyWithImpl<$Res>
           ? _value.reviewId
           : reviewId // ignore: cast_nullable_to_non_nullable
               as int,
+      courseId: null == courseId
+          ? _value.courseId
+          : courseId // ignore: cast_nullable_to_non_nullable
+              as String,
       userFirstName: null == userFirstName
           ? _value.userFirstName
           : userFirstName // ignore: cast_nullable_to_non_nullable
@@ -789,6 +845,7 @@ class __$$CourseReviewsImplCopyWithImpl<$Res>
 class _$CourseReviewsImpl implements _CourseReviews {
   const _$CourseReviewsImpl(
       {required this.reviewId,
+      required this.courseId,
       required this.userFirstName,
       required this.userLastName,
       required this.timestamp,
@@ -800,6 +857,8 @@ class _$CourseReviewsImpl implements _CourseReviews {
 
   @override
   final int reviewId;
+  @override
+  final String courseId;
   @override
   final String userFirstName;
   @override
@@ -813,7 +872,7 @@ class _$CourseReviewsImpl implements _CourseReviews {
 
   @override
   String toString() {
-    return 'CourseReviews(reviewId: $reviewId, userFirstName: $userFirstName, userLastName: $userLastName, timestamp: $timestamp, reviewText: $reviewText, reviewMark: $reviewMark)';
+    return 'CourseReviews(reviewId: $reviewId, courseId: $courseId, userFirstName: $userFirstName, userLastName: $userLastName, timestamp: $timestamp, reviewText: $reviewText, reviewMark: $reviewMark)';
   }
 
   @override
@@ -823,6 +882,8 @@ class _$CourseReviewsImpl implements _CourseReviews {
             other is _$CourseReviewsImpl &&
             (identical(other.reviewId, reviewId) ||
                 other.reviewId == reviewId) &&
+            (identical(other.courseId, courseId) ||
+                other.courseId == courseId) &&
             (identical(other.userFirstName, userFirstName) ||
                 other.userFirstName == userFirstName) &&
             (identical(other.userLastName, userLastName) ||
@@ -837,8 +898,8 @@ class _$CourseReviewsImpl implements _CourseReviews {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, reviewId, userFirstName,
-      userLastName, timestamp, reviewText, reviewMark);
+  int get hashCode => Object.hash(runtimeType, reviewId, courseId,
+      userFirstName, userLastName, timestamp, reviewText, reviewMark);
 
   @JsonKey(ignore: true)
   @override
@@ -857,6 +918,7 @@ class _$CourseReviewsImpl implements _CourseReviews {
 abstract class _CourseReviews implements CourseReviews {
   const factory _CourseReviews(
       {required final int reviewId,
+      required final String courseId,
       required final String userFirstName,
       required final String userLastName,
       required final String timestamp,
@@ -868,6 +930,8 @@ abstract class _CourseReviews implements CourseReviews {
 
   @override
   int get reviewId;
+  @override
+  String get courseId;
   @override
   String get userFirstName;
   @override

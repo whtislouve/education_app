@@ -40,6 +40,9 @@ class _CommonTextFieldState extends State<CommonTextField> {
           autofocus: true,
           decoration: InputDecoration(
             hintText: widget.hintText,
+            hintStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             enabledBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(

@@ -25,6 +25,8 @@ class CommonButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
       style: ButtonStyle(
+        textStyle: Theme.of(context).textButtonTheme.style!.textStyle,
+        elevation: WidgetStateProperty.all(0),
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/entities/course/models/course_model.dart';
 import 'package:travel_app/entities/popular_course_suggestion/ui/popular_course_suggetion_card_image_caption.dart';
 import 'package:travel_app/shared/ui/darkening_gradient/darkening_gradient.dart';
 import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
@@ -9,10 +10,12 @@ class PopularCourseSuggestionCardImageSection extends StatelessWidget {
     required this.courseImageName,
     required this.lessonsAmount,
     required this.totalLessonsTime,
+    required this.courseModel,
   });
   final String totalLessonsTime;
   final String lessonsAmount;
   final String courseImageName;
+  final CourseModel courseModel;
   @override
   Widget build(BuildContext context) {
     final sizeData = SizeInheritedWidget.of(context);
@@ -42,6 +45,7 @@ class PopularCourseSuggestionCardImageSection extends StatelessWidget {
             Color.fromARGB(0, 158, 158, 158),
           ],
           child: PopularCourseSuggetionCardImageCaption(
+            course: courseModel,
             totalLessonsTime: totalLessonsTime,
             lessonsAmount: lessonsAmount,
           )),

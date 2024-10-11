@@ -30,64 +30,60 @@ class _ExplorePageState extends State<ExplorePage>
     final screenHeight = mediaQuery.height;
     super.build(context);
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                  top: screenHeight * 0.07,
-                  left: screenWidth * 0.025,
-                  bottom: screenHeight * 0.02),
-              child: Text(
-                "Explore",
-                textAlign: TextAlign.left,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge
-                    ?.copyWith(fontSize: screenHeight * 0.036),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                    top: screenHeight * 0.07, bottom: screenHeight * 0.02),
+                child: Text("Explore",
+                    textAlign: TextAlign.left,
+                    style: Theme.of(context).textTheme.titleLarge),
               ),
-            ),
-            PopularInstructorSuggestionCarousel(),
-            CommonContentHeader(
-              title: "Topics",
-              headerButtonWidget: TextButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AllTopicsBottomSheetPage();
-                      });
-                },
-                child: const Text("All Topics"),
-              ),
-            ),
-            const PopularTopicsSuggestion(),
-            CommonContentHeader(
-              title: 'Popular Courses',
-              headerButtonWidget: TextButton(
+              PopularInstructorSuggestionCarousel(),
+              CommonContentHeader(
+                title: "Topics",
+                headerButtonWidget: TextButton(
                   onPressed: () {
                     showModalBottomSheet(
                         isScrollControlled: true,
                         context: context,
                         builder: (BuildContext context) {
-                          return AllCoursesBottomSheetPage();
+                          return AllTopicsBottomSheetPage();
                         });
                   },
-                  child: const Text("See All")),
-            ),
-            SizedBox(
-              width: screenWidth,
-              height: screenHeight * 0.3,
-              child: LayoutBuilder(builder: (context, constraints) {
-                return SizeInheritedWidget(
-                    maxWidth: constraints.maxWidth,
-                    maxHeight: constraints.maxHeight,
-                    child: PopularCoursesSuggestionCarousel());
-              }),
-            )
-          ],
+                  child: const Text("All Topics"),
+                ),
+              ),
+              const PopularTopicsSuggestion(),
+              CommonContentHeader(
+                title: 'Popular Courses',
+                headerButtonWidget: TextButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                          isScrollControlled: true,
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AllCoursesBottomSheetPage();
+                          });
+                    },
+                    child: const Text("See All")),
+              ),
+              SizedBox(
+                width: screenWidth,
+                height: screenHeight * 0.3,
+                child: LayoutBuilder(builder: (context, constraints) {
+                  return SizeInheritedWidget(
+                      maxWidth: constraints.maxWidth,
+                      maxHeight: constraints.maxHeight,
+                      child: PopularCoursesSuggestionCarousel());
+                }),
+              )
+            ],
+          ),
         ),
       ),
       // bottomNavigationBar: NavigationBar(),

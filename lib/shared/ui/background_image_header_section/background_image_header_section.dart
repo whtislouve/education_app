@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/entities/course/models/course_model.dart';
+import 'package:travel_app/features/wishList/wishListFeatures.dart';
+
 import 'package:travel_app/gen/assets.gen.dart';
 import 'package:travel_app/shared/ui/darkening_gradient/darkening_gradient.dart';
 import 'package:travel_app/shared/ui/size_inherited_widget/size_inherited_widget.dart';
@@ -11,11 +14,13 @@ class BackgroundImageHeaderSection extends StatelessWidget {
     this.addBookMarkIcon = false,
     this.titlePosition,
     required this.titleWidget,
+    required this.course,
   });
   final AssetGenImage backgroundImage;
   final bool addBookMarkIcon;
   final double? titlePosition;
   final Widget titleWidget;
+  final CourseModel course;
   @override
   Widget build(BuildContext context) {
     final sizeData = SizeInheritedWidget.of(context);
@@ -63,7 +68,12 @@ class BackgroundImageHeaderSection extends StatelessWidget {
                   )),
               addBookMarkIcon
                   ? IconButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        await WishListFeatures().addCourseToWishList(
+                            course: course,
+                            imagePath:
+                                'assets/course_detail/all_course_image2.png');
+                      },
                       icon: Icon(
                         Icons.bookmark_border,
                         color: Colors.white,

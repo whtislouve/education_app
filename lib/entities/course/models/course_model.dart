@@ -7,6 +7,7 @@ part 'course_model.freezed.dart';
 @freezed
 class CourseModel with _$CourseModel {
   const factory CourseModel({
+    required String id,
     required String title,
     required String totalLessonsTime,
     required int lessonsAmount,
@@ -25,6 +26,7 @@ class CourseModel with _$CourseModel {
 @freezed
 class CourseOverview with _$CourseOverview {
   const factory CourseOverview({
+    required String courseId,
     required int hoursOnDemandVideo,
     required int articlesAmount,
     required int amountResources,
@@ -41,6 +43,7 @@ class CourseOverview with _$CourseOverview {
 class CourseReviews with _$CourseReviews {
   const factory CourseReviews({
     required int reviewId,
+    required String courseId,
     required String userFirstName,
     required String userLastName,
     required String timestamp,

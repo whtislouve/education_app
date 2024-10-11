@@ -52,7 +52,7 @@ class AllCoursesBottomSheetPage extends StatelessWidget {
                                               course: course[index]));
                                         },
                                         imageName:
-                                            course[index].courseImageName,
+                                            'assets/course_detail/${course[index].courseImageName}',
                                         courseTitle: course[index].title,
                                         courseInstructor:
                                             "${course[index].instructor.firstName} ${course[index].instructor.lastName}",

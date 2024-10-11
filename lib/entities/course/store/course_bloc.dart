@@ -21,7 +21,7 @@ class CourseBloc extends Bloc<CourseEvents, CourseStates> {
         await event.map(
             getCourseDetailData: (_) async => await _getCourseDetailData(emit),
             getPopularCoursesData: (_) async {
-              await Future.delayed(Duration(seconds: 5));
+              await Future.delayed(const Duration(seconds: 1));
               await _getPopularCoursesData(emit);
             });
       },
@@ -43,6 +43,7 @@ class CourseBloc extends Bloc<CourseEvents, CourseStates> {
       courseDetailRepository.responseModel.responseData["detailCourse"]
           .forEach((course) => {
                 courseDetail.add(CourseModel.fromJson({
+                  "id": course["id"],
                   "title": course["title"],
                   "totalLessonsTime": course["totalLessonsTime"],
                   "lessonsAmount": course["lessonsAmount"],

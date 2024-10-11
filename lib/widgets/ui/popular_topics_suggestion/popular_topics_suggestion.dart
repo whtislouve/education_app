@@ -11,46 +11,43 @@ class PopularTopicsSuggestion extends StatelessWidget {
     final mediaQuery = Provider.of<ScreenSizeModel>(context);
     final screenWidth = mediaQuery.width;
 
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.015),
-      child: Wrap(
-        spacing: screenWidth * 0.025,
-        children: [
-          ElevatedButton.icon(
-            onPressed: () {},
-            label: const Text("Art and Humanities"),
-            icon: SvgPicture.asset(
-                "assets/explore/art_and_humanities_topic_image.svg"),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {},
-            label: const Text("Finance & Accounting"),
-            icon: SvgPicture.asset(
-                'assets/explore/finance_and_accounting_topic_image.svg'),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {},
-            label: const Text("Business"),
-            icon: SvgPicture.asset('assets/explore/business_topic_image.svg'),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {},
-            label: const Text("Design"),
-            icon: SvgPicture.asset('assets/explore/design_topic_image.svg'),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {},
-            label: const Text("Computer"),
-            icon: SvgPicture.asset('assets/explore/computer_topic_image.svg'),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {},
-            label: const Text("Information Technology"),
-            icon: SvgPicture.asset(
-                'assets/explore/information_technology_topic_image.svg'),
-          ),
-        ],
-      ),
+    return Wrap(
+      spacing: screenWidth * 0.025,
+      children: [
+        ElevatedButton.icon(
+          onPressed: () {},
+          label: const Text("Art and Humanities"),
+          icon: SvgPicture.asset(
+              "assets/explore/art_and_humanities_topic_image.svg"),
+        ),
+        ElevatedButton.icon(
+          onPressed: () {},
+          label: const Text("Finance & Accounting"),
+          icon: SvgPicture.asset(
+              'assets/explore/finance_and_accounting_topic_image.svg'),
+        ),
+        ElevatedButton.icon(
+          onPressed: () {},
+          label: const Text("Business"),
+          icon: SvgPicture.asset('assets/explore/business_topic_image.svg'),
+        ),
+        ElevatedButton.icon(
+          onPressed: () {},
+          label: const Text("Design"),
+          icon: SvgPicture.asset('assets/explore/design_topic_image.svg'),
+        ),
+        ElevatedButton.icon(
+          onPressed: () {},
+          label: const Text("Computer"),
+          icon: SvgPicture.asset('assets/explore/computer_topic_image.svg'),
+        ),
+        ElevatedButton.icon(
+          onPressed: () {},
+          label: const Text("Information Technology"),
+          icon: SvgPicture.asset(
+              'assets/explore/information_technology_topic_image.svg'),
+        ),
+      ],
     );
   }
 }

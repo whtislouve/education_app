@@ -5,9 +5,9 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:provider/provider.dart';
 import 'package:travel_app/app/routes/app_router.dart';
 import 'package:travel_app/gen/assets.gen.dart';
-import 'package:travel_app/pages/sign_in_with_email_page/features/sign_in_with_email_repository.dart';
-import 'package:travel_app/pages/sign_in_with_email_page/models/sign_in_with_email_form_keys.dart';
-import 'package:travel_app/shared/stores/sign_in_bloc.dart';
+import 'package:travel_app/entities/sign_in_with_email/api/sign_in_with_email_repository.dart';
+import 'package:travel_app/entities/sign_in_with_email/models/sign_in_with_email_form_keys.dart';
+import 'package:travel_app/entities/sign_in_with_email/store/sign_in_bloc.dart';
 import 'package:travel_app/shared/ui/common_button/common_button.dart';
 import 'package:travel_app/shared/ui/common_text_field/common_text_field.dart';
 import 'package:travel_app/shared/ui/dismiss_keyboard/dismiss_keyboard.dart';
@@ -90,6 +90,8 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                               height: screenHeight * 0.02,
                             ),
                             CommonButton(
+                              buttonWidth: screenWidth,
+                              buttonHeight: screenHeight * 0.05,
                               actionOnPress: _goToForgotPasswordPage,
                               backgroundColor:
                                   Theme.of(context).colorScheme.error,
@@ -101,10 +103,12 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage> {
                               height: screenHeight * 0.02,
                             ),
                             CommonButton(
+                              buttonWidth: screenWidth,
+                              buttonHeight: screenHeight * 0.05,
                               backgroundColor:
                                   Theme.of(context).colorScheme.primary,
                               foregroundColor:
-                                  Theme.of(context).colorScheme.secondary,
+                                  Theme.of(context).colorScheme.onPrimary,
                               actionOnPress: () {
                                 context.pushRoute(const HomeRoute());
                                 context.read<SignInBloc>().add(

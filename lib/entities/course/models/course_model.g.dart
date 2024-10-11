@@ -8,6 +8,7 @@ part of 'course_model.dart';
 
 _$CourseModelImpl _$$CourseModelImplFromJson(Map<String, dynamic> json) =>
     _$CourseModelImpl(
+      id: json['id'] as String,
       title: json['title'] as String,
       totalLessonsTime: json['totalLessonsTime'] as String,
       lessonsAmount: (json['lessonsAmount'] as num).toInt(),
@@ -25,6 +26,7 @@ _$CourseModelImpl _$$CourseModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CourseModelImplToJson(_$CourseModelImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'title': instance.title,
       'totalLessonsTime': instance.totalLessonsTime,
       'lessonsAmount': instance.lessonsAmount,
@@ -38,6 +40,7 @@ Map<String, dynamic> _$$CourseModelImplToJson(_$CourseModelImpl instance) =>
 
 _$CourseOverviewImpl _$$CourseOverviewImplFromJson(Map<String, dynamic> json) =>
     _$CourseOverviewImpl(
+      courseId: json['courseId'] as String,
       hoursOnDemandVideo: (json['hoursOnDemandVideo'] as num).toInt(),
       articlesAmount: (json['articlesAmount'] as num).toInt(),
       amountResources: (json['amountResources'] as num).toInt(),
@@ -50,6 +53,7 @@ _$CourseOverviewImpl _$$CourseOverviewImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CourseOverviewImplToJson(
         _$CourseOverviewImpl instance) =>
     <String, dynamic>{
+      'courseId': instance.courseId,
       'hoursOnDemandVideo': instance.hoursOnDemandVideo,
       'articlesAmount': instance.articlesAmount,
       'amountResources': instance.amountResources,
@@ -62,6 +66,7 @@ Map<String, dynamic> _$$CourseOverviewImplToJson(
 _$CourseReviewsImpl _$$CourseReviewsImplFromJson(Map<String, dynamic> json) =>
     _$CourseReviewsImpl(
       reviewId: (json['reviewId'] as num).toInt(),
+      courseId: json['courseId'] as String,
       userFirstName: json['userFirstName'] as String,
       userLastName: json['userLastName'] as String,
       timestamp: json['timestamp'] as String,
@@ -72,6 +77,7 @@ _$CourseReviewsImpl _$$CourseReviewsImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CourseReviewsImplToJson(_$CourseReviewsImpl instance) =>
     <String, dynamic>{
       'reviewId': instance.reviewId,
+      'courseId': instance.courseId,
       'userFirstName': instance.userFirstName,
       'userLastName': instance.userLastName,
       'timestamp': instance.timestamp,

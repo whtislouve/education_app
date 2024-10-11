@@ -26,7 +26,7 @@ class CourseCard extends StatelessWidget {
     final screenHeight = mediaQuery.height;
     return SizedBox(
       width: screenWidth,
-      height: screenHeight * 0.135,
+      height: screenHeight * 0.17,
       child: LayoutBuilder(
         builder: (context, constraints) {
           return SizeInheritedWidget(
@@ -41,7 +41,13 @@ class CourseCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('assets/course_detail/$imageName'),
+                      SizedBox(
+                        width: constraints.maxWidth * 0.3,
+                        height: constraints.maxHeight * 0.85,
+                        child: Image.asset(
+                          imageName,
+                        ),
+                      ),
                       SizedBox(width: constraints.maxWidth * 0.01),
                       CourseCardTitleSection(
                         courseTitle: courseTitle,
@@ -53,7 +59,6 @@ class CourseCard extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: screenWidth * 0.02,
-                      // vertical: screenHeight * 0.002,
                     ),
                     child: const Divider(
                       color: Color.fromARGB(162, 158, 158, 158),

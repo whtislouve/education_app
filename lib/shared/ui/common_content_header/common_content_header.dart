@@ -15,8 +15,7 @@ class CommonContentHeader extends StatelessWidget {
     final mediaQuery = Provider.of<ScreenSizeModel>(context);
     final screenWidth = mediaQuery.width;
     final screenHeight = mediaQuery.height;
-    return Container(
-      padding: EdgeInsets.only(left: screenWidth * 0.045),
+    return SizedBox(
       width: screenWidth,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,7 +25,7 @@ class CommonContentHeader extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleLarge
-                ?.copyWith(fontSize: screenHeight * 0.021),
+                ?.copyWith(fontSize: screenHeight * 0.024),
           ),
           headerButtonWidget,
         ],

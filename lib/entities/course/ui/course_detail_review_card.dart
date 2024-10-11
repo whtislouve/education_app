@@ -17,7 +17,7 @@ class CourseDetailReviewCard extends StatelessWidget {
     final screenHeight = mediaQuery.height;
     return SizedBox(
       width: screenWidth,
-      height: screenHeight * 0.14,
+      height: screenHeight * 0.17,
       child: LayoutBuilder(builder: (context, constraints) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,10 +27,9 @@ class CourseDetailReviewCard extends StatelessWidget {
               children: [
                 Text(
                   "${courseReviews.userFirstName} ${courseReviews.userLastName}",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleSmall
-                      ?.copyWith(fontWeight: FontWeight.w600),
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      fontSize: screenHeight * 0.0185),
                 ),
                 CourseDetailReviewMark(
                     reviewMark: courseReviews.reviewMark.toDouble()),
@@ -44,7 +43,16 @@ class CourseDetailReviewCard extends StatelessWidget {
                   ?.copyWith(color: Colors.grey),
             ),
             SizedBox(height: constraints.maxHeight * 0.015),
-            Text(courseReviews.reviewText),
+            Text(
+              courseReviews.reviewText,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall
+                  ?.copyWith(fontSize: screenHeight * 0.018),
+            ),
+            const Divider(
+              color: Color.fromARGB(162, 158, 158, 158),
+            ),
           ],
         );
       }),

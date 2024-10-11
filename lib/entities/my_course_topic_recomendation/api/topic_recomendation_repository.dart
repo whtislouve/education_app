@@ -8,6 +8,6 @@ class TopicRecomendationRepository {
 
   Future getTopicRecomendationData() async {
     responseModel = await dio.makeRequest(
-        "https://dummyjson.com/c/d183-b6e8-49a1-adc1", responseModel);
+        "https://dummyjson.com/c/8288-ec4b-4368-8f77", responseModel);
   }
 }

@@ -69,7 +69,7 @@ class TopicPage extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge
-                      ?.copyWith(fontSize: screenHeight * 0.021),
+                      ?.copyWith(fontSize: screenHeight * 0.024),
                 )),
             Padding(
               padding: EdgeInsets.only(
@@ -94,22 +94,25 @@ class TopicPage extends StatelessWidget {
                     .toList(),
               ),
             ),
-            CommonContentHeader(
-              title: "Popular instructors",
-              headerButtonWidget: TextButton(
-                style: ButtonStyle(
-                  padding: WidgetStateProperty.all(
-                      EdgeInsets.only(right: screenWidth * 0.02)),
+            Padding(
+              padding: EdgeInsets.only(left: screenWidth * 0.02),
+              child: CommonContentHeader(
+                title: "Popular instructors",
+                headerButtonWidget: TextButton(
+                  style: ButtonStyle(
+                    padding: WidgetStateProperty.all(
+                        EdgeInsets.only(right: screenWidth * 0.02)),
+                  ),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        isScrollControlled: true,
+                        context: context,
+                        builder: (BuildContext context) {
+                          return PopularInstructorsBottomSheetPage();
+                        });
+                  },
+                  child: const Text("See All"),
                 ),
-                onPressed: () {
-                  showModalBottomSheet(
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (BuildContext context) {
-                        return PopularInstructorsBottomSheetPage();
-                      });
-                },
-                child: const Text("See All"),
               ),
             ),
             PopularInstructorsCarousel(
@@ -117,15 +120,15 @@ class TopicPage extends StatelessWidget {
             ),
             Padding(
                 padding: EdgeInsets.only(
+                  top: screenHeight * 0.02,
                   left: screenWidth * 0.04,
-                  bottom: screenHeight * 0.025,
                 ),
                 child: Text(
                   "All Courses",
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge
-                      ?.copyWith(fontSize: screenHeight * 0.021),
+                      ?.copyWith(fontSize: screenHeight * 0.024),
                 )),
             Column(
               children: topic.courses
@@ -134,7 +137,8 @@ class TopicPage extends StatelessWidget {
                           context.router
                               .push(CourseDetailRoute(course: course));
                         },
-                        imageName: course.courseImageName,
+                        imageName:
+                            'assets/course_detail/${course.courseImageName}',
                         courseTitle: course.title,
                         courseInstructor:
                             "${course.instructor.firstName} ${course.instructor.lastName}",

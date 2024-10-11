@@ -21,26 +21,27 @@ class PopularInstructorSuggestionCard extends StatelessWidget {
     return Container(
       width: screenWidth * 0.65,
       height: screenHeight * 0.43,
-      margin: EdgeInsets.only(left: screenWidth * 0.025),
+      margin: EdgeInsets.only(right: screenWidth * 0.025),
       decoration: BoxDecoration(
           borderRadius: BorderRadiusDirectional.vertical(
               top: Radius.circular(screenWidth * 0.04),
               bottom: Radius.circular(screenWidth * 0.04)),
           image: DecorationImage(
-              fit: BoxFit.none,
+              fit: BoxFit.fill,
               image: Image.asset(
-                      "assets/popular_teachers_carousel/${popularInstructorCourse.courseImageName}")
-                  .image,
+                "assets/popular_teachers_carousel/${popularInstructorCourse.courseImageName}",
+              ).image,
               alignment: Alignment.topCenter)),
-      child: TextButton(
-        style: ButtonStyle(padding: WidgetStateProperty.all(EdgeInsets.zero)),
-        onPressed: () {
-          context.router
-              .push(CourseDetailRoute(course: popularInstructorCourse));
-        },
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            return DarkeningGradient(
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return TextButton(
+            style:
+                ButtonStyle(padding: WidgetStateProperty.all(EdgeInsets.zero)),
+            onPressed: () {
+              context.router
+                  .push(CourseDetailRoute(course: popularInstructorCourse));
+            },
+            child: DarkeningGradient(
               width: constraints.maxWidth,
               height: constraints.maxHeight,
               borderRadiusGeometry: BorderRadiusDirectional.vertical(
@@ -89,15 +90,14 @@ class PopularInstructorSuggestionCard extends StatelessWidget {
                       "${popularInstructorCourse.instructor.firstName} ${popularInstructorCourse.instructor.lastName}",
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
                             color: Colors.white,
-                            fontSize: constraints.maxHeight * 0.04,
                           ),
                     ),
                   ],
                 ),
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }

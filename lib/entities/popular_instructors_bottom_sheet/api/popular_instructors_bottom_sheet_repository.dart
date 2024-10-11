@@ -6,6 +6,6 @@ class PopularInstructorsBottomSheetRepository {
   ResponseModel responseModel = ResponseModel();
   Future getInstructorsData() async {
     responseModel = await dioClient.makeRequest(
-        "https://dummyjson.com/c/c5a5-6a52-40ea-87c5", responseModel);
+        "https://dummyjson.com/c/fc7c-3351-4609-92ae", responseModel);
   }
 }

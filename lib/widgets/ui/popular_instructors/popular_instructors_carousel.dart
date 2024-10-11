@@ -24,14 +24,13 @@ class PopularInstructorsCarousel extends StatelessWidget {
             maxWidth: constraints.maxWidth,
             maxHeight: constraints.maxHeight,
             child: GridView.count(
-                // padding: EdgeInsets.only(top: screenHeight * 0.015),
                 scrollDirection: Axis.horizontal,
-                childAspectRatio: 0.25,
+                childAspectRatio: screenWidth * 0.0006,
+                padding: EdgeInsets.only(left: constraints.maxWidth * 0.02),
                 shrinkWrap: true,
                 crossAxisCount: 2,
                 children: instructors
-                    .map((ele) => SizedBox(
-                          width: constraints.maxWidth / instructors.length,
+                    .map((ele) => Expanded(
                           child: Row(
                             children: [
                               PopularInstructorCard(

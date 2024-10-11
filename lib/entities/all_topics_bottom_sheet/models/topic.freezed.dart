@@ -464,6 +464,7 @@ Instructors _$InstructorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Instructors {
   int get id => throw _privateConstructorUsedError;
+  String get courseId => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get instructorTopics => throw _privateConstructorUsedError;
@@ -484,6 +485,7 @@ abstract class $InstructorsCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
+      String courseId,
       String firstName,
       String lastName,
       String instructorTopics,
@@ -505,6 +507,7 @@ class _$InstructorsCopyWithImpl<$Res, $Val extends Instructors>
   @override
   $Res call({
     Object? id = null,
+    Object? courseId = null,
     Object? firstName = null,
     Object? lastName = null,
     Object? instructorTopics = null,
@@ -516,6 +519,10 @@ class _$InstructorsCopyWithImpl<$Res, $Val extends Instructors>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      courseId: null == courseId
+          ? _value.courseId
+          : courseId // ignore: cast_nullable_to_non_nullable
+              as String,
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -550,6 +557,7 @@ abstract class _$$InstructorsImplCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
+      String courseId,
       String firstName,
       String lastName,
       String instructorTopics,
@@ -569,6 +577,7 @@ class __$$InstructorsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? courseId = null,
     Object? firstName = null,
     Object? lastName = null,
     Object? instructorTopics = null,
@@ -580,6 +589,10 @@ class __$$InstructorsImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      courseId: null == courseId
+          ? _value.courseId
+          : courseId // ignore: cast_nullable_to_non_nullable
+              as String,
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -609,6 +622,7 @@ class __$$InstructorsImplCopyWithImpl<$Res>
 class _$InstructorsImpl with DiagnosticableTreeMixin implements _Instructors {
   const _$InstructorsImpl(
       {required this.id,
+      required this.courseId,
       required this.firstName,
       required this.lastName,
       required this.instructorTopics,
@@ -620,6 +634,8 @@ class _$InstructorsImpl with DiagnosticableTreeMixin implements _Instructors {
 
   @override
   final int id;
+  @override
+  final String courseId;
   @override
   final String firstName;
   @override
@@ -633,7 +649,7 @@ class _$InstructorsImpl with DiagnosticableTreeMixin implements _Instructors {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Instructors(id: $id, firstName: $firstName, lastName: $lastName, instructorTopics: $instructorTopics, studentsAmount: $studentsAmount, coursesAmount: $coursesAmount)';
+    return 'Instructors(id: $id, courseId: $courseId, firstName: $firstName, lastName: $lastName, instructorTopics: $instructorTopics, studentsAmount: $studentsAmount, coursesAmount: $coursesAmount)';
   }
 
   @override
@@ -642,6 +658,7 @@ class _$InstructorsImpl with DiagnosticableTreeMixin implements _Instructors {
     properties
       ..add(DiagnosticsProperty('type', 'Instructors'))
       ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('courseId', courseId))
       ..add(DiagnosticsProperty('firstName', firstName))
       ..add(DiagnosticsProperty('lastName', lastName))
       ..add(DiagnosticsProperty('instructorTopics', instructorTopics))
@@ -655,6 +672,8 @@ class _$InstructorsImpl with DiagnosticableTreeMixin implements _Instructors {
         (other.runtimeType == runtimeType &&
             other is _$InstructorsImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.courseId, courseId) ||
+                other.courseId == courseId) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
@@ -669,8 +688,8 @@ class _$InstructorsImpl with DiagnosticableTreeMixin implements _Instructors {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, firstName, lastName,
-      instructorTopics, studentsAmount, coursesAmount);
+  int get hashCode => Object.hash(runtimeType, id, courseId, firstName,
+      lastName, instructorTopics, studentsAmount, coursesAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -689,6 +708,7 @@ class _$InstructorsImpl with DiagnosticableTreeMixin implements _Instructors {
 abstract class _Instructors implements Instructors {
   const factory _Instructors(
       {required final int id,
+      required final String courseId,
       required final String firstName,
       required final String lastName,
       required final String instructorTopics,
@@ -700,6 +720,8 @@ abstract class _Instructors implements Instructors {
 
   @override
   int get id;
+  @override
+  String get courseId;
   @override
   String get firstName;
   @override

@@ -30,12 +30,13 @@ class CourseDetailPage extends StatelessWidget {
           children: [
             SizedBox(
               width: screenWidth,
-              height: screenHeight * 0.55,
+              height: screenHeight * 0.45,
               child: LayoutBuilder(builder: (context, constraints) {
                 return SizeInheritedWidget(
                   maxWidth: constraints.maxWidth,
                   maxHeight: constraints.maxHeight,
                   child: BackgroundImageHeaderSection(
+                      course: course,
                       titlePosition: constraints.maxHeight * 0.6,
                       addBookMarkIcon: true,
                       backgroundImage:
@@ -49,7 +50,9 @@ class CourseDetailPage extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.only(
-                  left: screenWidth * 0.045, right: screenWidth * 0.045),
+                  left: screenWidth * 0.045,
+                  right: screenWidth * 0.045,
+                  top: screenHeight * 0.025),
               width: screenWidth,
               child: LayoutBuilder(builder: (context, constriants) {
                 return Column(
@@ -60,7 +63,7 @@ class CourseDetailPage extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge
-                          ?.copyWith(fontSize: screenHeight * 0.021),
+                          ?.copyWith(fontSize: screenHeight * 0.024),
                     ),
                     SizedBox(height: screenHeight * 0.015),
                     CourseOverviewTile(
@@ -105,7 +108,7 @@ class CourseDetailPage extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge
-                          ?.copyWith(fontSize: screenHeight * 0.021),
+                          ?.copyWith(fontSize: screenHeight * 0.024),
                     ),
                     SizedBox(height: screenHeight * 0.03),
                     SizedBox(
@@ -127,11 +130,14 @@ class CourseDetailPage extends StatelessWidget {
                       }),
                     ),
                     // SizedBox(height: 30),
-                    CommonContentHeader(
-                      title: "Reviews",
-                      headerButtonWidget: TextButton(
-                        onPressed: () {},
-                        child: const Text("See All"),
+                    Padding(
+                      padding: EdgeInsets.only(right: screenWidth * 0.045),
+                      child: CommonContentHeader(
+                        title: "Reviews",
+                        headerButtonWidget: TextButton(
+                          onPressed: () {},
+                          child: const Text("See All"),
+                        ),
                       ),
                     ),
 
@@ -139,22 +145,30 @@ class CourseDetailPage extends StatelessWidget {
                       padding: EdgeInsets.only(bottom: screenHeight * 0.02),
                       child: Row(
                         children: [
-                          const Text("4.6"),
+                          Text(
+                            "4.6",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(
+                                  fontSize: screenHeight * 0.024,
+                                ),
+                          ),
                           SizedBox(width: screenWidth * 0.01),
                           const CourseDetailReviewMark(reviewMark: 4.6),
                         ],
                       ),
                     ),
 
-                    Column(
-                      children: course.reviews.map((review) {
-                        return CourseDetailReviewCard(courseReviews: review);
-                      }).toList(),
+                    SizedBox(
+                      height: screenHeight * 0.17 * course.reviews.length,
+                      child: Column(
+                        children: course.reviews.map((review) {
+                          return CourseDetailReviewCard(courseReviews: review);
+                        }).toList(),
+                      ),
                     ),
 
-                    const Divider(
-                      color: Color.fromARGB(162, 158, 158, 158),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(bottom: screenWidth * 0.04),
                       child: Row(
@@ -167,7 +181,7 @@ class CourseDetailPage extends StatelessWidget {
                           CommonButton(
                             actionOnPress: () {},
                             buttonIcon: const Icon(Icons.add_to_queue_rounded),
-                            buttonWidth: 162,
+                            buttonWidth: screenWidth * 0.4,
                             backgroundColor:
                                 Theme.of(context).colorScheme.primary,
                             foregroundColor:

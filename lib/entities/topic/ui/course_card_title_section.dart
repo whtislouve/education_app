@@ -15,15 +15,13 @@ class CourseCardTitleSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final sizeData = SizeInheritedWidget.of(context);
     if (sizeData == null) {
-      return Container(
-        child: const Text("Size data not found"),
-      );
+      return const Text("Size data not found");
     }
     final maxWidth = sizeData.maxWidth;
     final maxHeight = sizeData.maxHeight;
     return SizedBox(
       width: maxWidth * 0.68,
-      height: maxHeight * 0.8,
+      height: maxHeight * 0.84,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -32,10 +30,8 @@ class CourseCardTitleSection extends StatelessWidget {
             courseTitle,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(fontWeight: FontWeight.w600, height: 1.1),
+            style:
+                Theme.of(context).textTheme.titleMedium?.copyWith(height: 1.1),
           ),
           SizedBox(height: maxHeight * 0.01),
           Text(

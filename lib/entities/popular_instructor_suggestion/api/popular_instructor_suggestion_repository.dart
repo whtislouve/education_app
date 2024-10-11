@@ -7,6 +7,13 @@ class PopularInstructorSuggestionRepository {
   ResponseModel responseModel = ResponseModel();
   Future getPopularInstructorSuggestionData() async {
     responseModel = await dio.makeRequest(
-        "https://dummyjson.com/c/f69f-15e2-42bf-a98e", responseModel);
+        "https://dummyjson.com/c/c466-d5d6-40d6-895d", responseModel);
+
+    // await insertCourse("44445");
+    // await insertCourseOverview(1, 1);
+    // await insertReviews(1, 'Lolo');
+    // await insertCourseOverview(1, 1);
+    // List<Map<String, dynamic>> course = await getCourse();
+    // print(course);
   }
 }

@@ -34,6 +34,7 @@ class SubTopics with _$SubTopics {
 class Instructors with _$Instructors {
   const factory Instructors({
     required int id,
+    required String courseId,
     required String firstName,
     required String lastName,
     required String instructorTopics,
@@ -44,15 +45,3 @@ class Instructors with _$Instructors {
   factory Instructors.fromJson(Map<String, dynamic> json) =>
       _$InstructorsFromJson(json);
 }
-
-// @freezed
-// class Courses with _$Courses {
-//   const factory Courses({
-//     required String title,
-//     required String instructor,
-//     required int coursePrice,
-//   }) = _Courses;
-
-//   factory Courses.fromJson(Map<String, dynamic> json) =>
-//       _$CoursesFromJson(json);
-// }

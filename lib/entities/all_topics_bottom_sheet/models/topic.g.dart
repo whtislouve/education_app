@@ -46,6 +46,7 @@ Map<String, dynamic> _$$SubTopicsImplToJson(_$SubTopicsImpl instance) =>
 _$InstructorsImpl _$$InstructorsImplFromJson(Map<String, dynamic> json) =>
     _$InstructorsImpl(
       id: (json['id'] as num).toInt(),
+      courseId: json['courseId'] as String,
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
       instructorTopics: json['instructorTopics'] as String,
@@ -56,6 +57,7 @@ _$InstructorsImpl _$$InstructorsImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$InstructorsImplToJson(_$InstructorsImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'courseId': instance.courseId,
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'instructorTopics': instance.instructorTopics,

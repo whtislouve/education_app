@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/app/routes/app_router.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:travel_app/app/themes/app_theme.dart';
 import 'package:travel_app/shared/ui/screen_size_provider/screen_size_provider.dart';
 
-void main() {
-  runApp(ScreenSizeProvider(
-    child: DevicePreview(
-      enabled: true,
-      isToolbarVisible: true,
-      builder: (context) => MyApp(), // Wrap your app
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(DevicePreview(
+    enabled: true,
+    isToolbarVisible: true,
+    builder: (context) => ScreenSizeProvider(
+      child: MyApp(),
     ),
   ));
 }
@@ -19,32 +22,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Demo',
-      useInheritedMediaQuery: true,
+      title: 'Educational App',
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      theme: ThemeData(
-        colorScheme: const ColorScheme(
-          brightness: Brightness.light,
-          primary: const Color.fromRGBO(78, 116, 250, 1),
-          onPrimary: const Color.fromRGBO(255, 255, 255, 1),
-          secondary: Color.fromARGB(255, 255, 255, 255),
-          onSecondary: const Color.fromRGBO(0, 0, 0, 1),
-          error: Color.fromARGB(255, 255, 255, 255),
-          onError: const Color.fromRGBO(255, 1, 1, 1),
-          surface: const Color.fromRGBO(255, 255, 255, 1),
-          onSurface: const Color.fromRGBO(0, 0, 0, 1),
-        ),
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        textTheme: const TextTheme(
-          titleLarge: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 30,
-            height: 1,
-          ),
-        ),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme(context),
       routerConfig: _appRouter.config(),
     );
   }
